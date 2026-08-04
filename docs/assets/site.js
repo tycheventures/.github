@@ -16,6 +16,8 @@ document.addEventListener('DOMContentLoaded', function () {
   if (nav && btn) {
     nav.hidden = true;
     btn.innerHTML = MENU_SVG;
+    btn.setAttribute('aria-expanded', 'false');
+    btn.setAttribute('aria-label', 'Open menu');
     btn.addEventListener('click', function () {
       nav.hidden = !nav.hidden;
       btn.innerHTML = nav.hidden ? MENU_SVG : X_SVG;

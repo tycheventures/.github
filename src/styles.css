@@ -43,6 +43,9 @@
   --color-brand-alt: var(--brand-alt);
   --color-surface: var(--surface);
   --color-surface-alt: var(--surface-alt);
+  --color-footer: var(--footer);
+  --color-footer-foreground: var(--footer-foreground);
+  --color-footer-muted: var(--footer-muted);
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --shadow-card: 0 2px 14px rgb(27 27 79 / 0.07);
@@ -76,6 +79,9 @@
   --brand-alt: oklch(0.505 0.146 326.5);
   --surface: oklch(0.982 0 90);
   --surface-alt: oklch(0.976 0 90);
+  --footer: oklch(0.29 0.005 260);
+  --footer-foreground: oklch(0.98 0 0);
+  --footer-muted: oklch(0.78 0 0);
 }
 
 .dark {
@@ -102,6 +108,9 @@
   --brand-alt: oklch(0.62 0.16 326.5);
   --surface: oklch(0.22 0.05 277.7);
   --surface-alt: oklch(0.24 0.06 277.7);
+  --footer: oklch(0.20 0.02 260);
+  --footer-foreground: oklch(0.98 0 0);
+  --footer-muted: oklch(0.78 0 0);
 }
 
 @layer base {

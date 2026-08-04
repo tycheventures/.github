@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { ChevronLeft, ChevronRight, Quote } from "lucide-react";
+import { ChevronLeft, ChevronRight } from "lucide-react";
 import { TESTIMONIALS } from "@/lib/site-data";
 
 export function Testimonials() {
@@ -17,52 +17,56 @@ export function Testimonials() {
 
   return (
     <div
-      className="mx-auto mt-10 max-w-3xl"
+      className="mx-auto mt-12 max-w-4xl"
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <figure className="rounded-md bg-background p-8 text-center shadow-card md:p-12">
+      <figure className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <img
           src={item.img}
           alt={item.name}
           width={85}
           height={85}
           loading="lazy"
-          className="mx-auto h-20 w-20 rounded-full object-cover"
+          className="h-20 w-20 shrink-0 object-cover"
         />
-        <Quote className="mx-auto mt-5 h-6 w-6 text-primary" aria-hidden="true" />
-        <blockquote className="mt-4 text-base leading-relaxed text-muted-foreground">
-          {item.quote}
-        </blockquote>
-        <figcaption className="mt-6">
-          <div className="text-sm font-semibold uppercase tracking-wide text-heading">
+        <div className="relative pl-7">
+          <span
+            aria-hidden="true"
+            className="absolute left-0 top-[-6px] font-display text-4xl leading-none text-border"
+          >
+            &ldquo;
+          </span>
+          <blockquote className="text-sm leading-relaxed text-muted-foreground">
+            {item.quote}
+          </blockquote>
+          <figcaption className="mt-4 text-sm font-semibold text-primary">
+            {"– "}
             {item.href ? (
               <a
                 href={item.href}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="transition-colors hover:text-primary"
+                className="transition-colors hover:text-accent"
               >
                 {item.name}
               </a>
             ) : (
               item.name
             )}
-          </div>
-          {item.company && (
-            <div className="mt-1 text-xs uppercase tracking-wide text-muted-foreground">
-              {item.company}
-            </div>
-          )}
-        </figcaption>
+            {item.company && (
+              <span className="font-normal text-muted-foreground"> {item.company}</span>
+            )}
+          </figcaption>
+        </div>
       </figure>
 
-      <div className="mt-6 flex items-center justify-center gap-4">
+      <div className="mt-8 flex items-center justify-center gap-4">
         <button
           type="button"
           onClick={() => setI((v) => (v - 1 + total) % total)}
           aria-label="Previous testimonial"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
         >
           <ChevronLeft className="h-4 w-4" />
         </button>
@@ -84,7 +88,7 @@ export function Testimonials() {
           type="button"
           onClick={() => setI((v) => (v + 1) % total)}
           aria-label="Next testimonial"
-          className="inline-flex h-9 w-9 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
+          className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
         >
           <ChevronRight className="h-4 w-4" />
         </button>

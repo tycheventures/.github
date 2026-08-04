@@ -1,9 +1,41 @@
 export const SITE = "https://tycheventures.com";
 
-export const NAV = [
+type NavChild = { label: string; href: string; external?: boolean };
+type NavItem = { label: string; href: string; internal?: boolean; children?: NavChild[] };
+
+export const NAV: NavItem[] = [
   { label: "About", href: "/about", internal: true },
   { label: "Work", href: `${SITE}/work/` },
-  { label: "Services", href: `${SITE}/services/` },
+  {
+    label: "Services",
+    href: `${SITE}/services/`,
+    children: [
+      { label: "Learning management system", href: `${SITE}/services/learning-management-system/` },
+      { label: "E-commerce development", href: `${SITE}/services/e-commerce-development/` },
+      { label: "Job Portal development", href: `${SITE}/services/job-portal-development/` },
+      { label: "Graphics Design services", href: `${SITE}/services/graphics-design-services/` },
+      {
+        label: "Website Designing and Development",
+        href: `${SITE}/services/website-designing-and-development/`,
+      },
+      { label: "Search Engine Optimization", href: `${SITE}/services/search-engine-optimization/` },
+      { label: "Digital Marketing Services", href: `${SITE}/services/digital-marketing-services/` },
+      {
+        label: "Annual Maintenance Contract",
+        href: `${SITE}/services/annual-maintenance-contract/`,
+      },
+    ],
+  },
+  {
+    label: "Products",
+    href: `${SITE}/services/`,
+    children: [
+      { label: "Team WPGenius", href: "http://wpgenius.in/", external: true },
+      { label: "FenixHost", href: "https://shop.fenixhost.in/", external: true },
+      { label: "Plugins marketplace", href: "https://plugins.gallery/", external: true },
+      { label: "Themes Marketplace", href: "https://themes.expert/", external: true },
+    ],
+  },
   { label: "Blog", href: `${SITE}/blog/` },
   { label: "Careers", href: `${SITE}/careers/` },
   { label: "Contact", href: `${SITE}/contact/` },
@@ -11,18 +43,22 @@ export const NAV = [
 
 export const HIGHLIGHTS = [
   {
+    icon: "thumbs-up",
     title: "100 % Customer Satisfaction",
     text: "A Happy customer is our motto. We give our best to deliver 100 % customer satisfaction",
   },
   {
+    icon: "rupee",
     title: "Reasonable Pricing",
     text: "We have designed a reasonable pricing structure suitable for startups, mid-level business and large companies without compromising the work quality",
   },
   {
+    icon: "star",
     title: "Quality Solutions",
     text: "Our streamlined process and experienced team members deliver a high-quality service to our customers.",
   },
   {
+    icon: "team",
     title: "Skilled and Experienced Team",
     text: "Our experienced and well-versed team always focuses on the result-oriented delivery of digital solutions.",
   },

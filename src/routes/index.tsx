@@ -40,30 +40,10 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section className="relative overflow-hidden bg-background">
-          <div
-            aria-hidden="true"
-            className="pointer-events-none absolute inset-0 -z-0"
-          >
-            <svg
-              className="absolute inset-0 h-full w-full"
-              viewBox="0 0 1440 720"
-              preserveAspectRatio="xMidYMid slice"
-              fill="none"
-            >
-              <path
-                className="fill-wave"
-                d="M1440 0H520c-40 66 12 108 90 128 96 24 118 78 44 118-96 52-268 44-330 118-58 70 12 148 168 176 130 24 268 34 420 42 172 10 380 12 628 8V0Z"
-              />
-              <path
-                className="fill-wave-soft"
-                d="M1440 96H744c-30 52 6 84 66 100 74 20 90 62 34 92-74 42-206 36-254 94-44 56 10 118 130 140 100 20 206 28 322 34 132 8 292 10 398 6V96Z"
-              />
-
-            </svg>
-          </div>
-
-          <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-28 md:pb-24 md:pt-36 lg:grid-cols-2">
+        <section
+          className="relative overflow-hidden bg-background hero-banner bg-cover bg-[position:60%_center] bg-no-repeat lg:bg-[length:100%_auto] lg:bg-bottom"
+        >
+          <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-28 md:pb-24 md:pt-36 lg:min-h-[560px] lg:grid-cols-2">
             <div>
               <p className="font-display text-2xl font-normal text-heading sm:text-3xl">Welcome to</p>
               <h1 className="mt-2 font-display text-4xl font-semibold tracking-[0.04em] text-heading sm:text-5xl">
@@ -75,15 +55,10 @@ function Index() {
                 Building Brands With Passion And Ulterior Motive
               </p>
             </div>
-            <img
-              src="/img/banner1.png"
-              alt="Illustration of the Tyche Ventures team designing and building websites"
-              width={900}
-              height={584}
-              className="mx-auto w-full max-w-xl"
-            />
+            <div aria-hidden="true" className="hidden lg:block" />
           </div>
         </section>
+
 
 
         {/* Highlights */}

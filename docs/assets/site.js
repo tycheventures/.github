@@ -4,14 +4,22 @@ const MENU_SVG='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
 const X_SVG='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x h-5 w-5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
 
 document.addEventListener('DOMContentLoaded', function () {
+  var nav = document.getElementById('mobile-nav');
   var header = document.querySelector('header');
   if (header) {
-    var onScroll = function () { header.classList.toggle('shadow-card', window.scrollY > 20); };
-    onScroll();
+    var transparent = header.getAttribute('data-transparent') === 'true';
+    var onScroll = function () {
+      var scrolled = window.scrollY > 20;
+      var menuOpen = nav && !nav.hidden;
+      var solid = !transparent || scrolled || menuOpen;
+      header.classList.toggle('bg-background', solid);
+      header.classList.toggle('bg-transparent', !solid);
+      header.classList.toggle('shadow-card', solid && scrolled);
+    };
+    header.__sync = onScroll;
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  var nav = document.getElementById('mobile-nav');
   var btn = document.getElementById('menu-toggle');
   if (nav && btn) {
     nav.hidden = true;
@@ -23,6 +31,7 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.innerHTML = nav.hidden ? MENU_SVG : X_SVG;
       btn.setAttribute('aria-expanded', String(!nav.hidden));
       btn.setAttribute('aria-label', nav.hidden ? 'Open menu' : 'Close menu');
+      if (header.__sync) header.__sync();
     });
     nav.querySelectorAll('button[aria-expanded]').forEach(function (sub) {
       var list = sub.nextElementSibling;
@@ -38,6 +47,8 @@ document.addEventListener('DOMContentLoaded', function () {
       });
     });
   }
+
+  if (header && header.__sync) header.__sync();
 
   var counters = document.querySelectorAll('[data-count]');
   if (counters.length && 'IntersectionObserver' in window) {

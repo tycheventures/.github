@@ -4,17 +4,13 @@ const MENU_SVG='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" v
 const X_SVG='<svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="lucide lucide-x h-5 w-5"><path d="M18 6 6 18"/><path d="m6 6 12 12"/></svg>';
 
 document.addEventListener('DOMContentLoaded', function () {
-  // sticky header shadow
   var header = document.querySelector('header');
   if (header) {
-    var onScroll = function () {
-      header.classList.toggle('shadow-card', window.scrollY > 20);
-    };
+    var onScroll = function () { header.classList.toggle('shadow-card', window.scrollY > 20); };
     onScroll();
     window.addEventListener('scroll', onScroll, { passive: true });
   }
 
-  // mobile menu
   var nav = document.getElementById('mobile-nav');
   var btn = document.getElementById('menu-toggle');
   if (nav && btn) {
@@ -41,7 +37,6 @@ document.addEventListener('DOMContentLoaded', function () {
     });
   }
 
-  // count-up
   var counters = document.querySelectorAll('[data-count]');
   if (counters.length && 'IntersectionObserver' in window) {
     var io = new IntersectionObserver(function (entries) {
@@ -64,21 +59,18 @@ document.addEventListener('DOMContentLoaded', function () {
     counters.forEach(function (c) { io.observe(c); });
   }
 
-  // testimonials
   var fig = document.getElementById('testimonial-figure');
   var dots = Array.prototype.slice.call(document.querySelectorAll('[data-dot]'));
   if (fig && SLIDES.length) {
     var i = 0, paused = false;
     var render = function () {
       fig.innerHTML = SLIDES[i];
-      dots.forEach(function (d, idx) {
-        d.classList.toggle('bg-primary', idx === i);
-        d.classList.toggle('bg-border', idx !== i);
+      dots.forEach(function (dd, idx) {
+        dd.classList.toggle('bg-primary', idx === i);
+        dd.classList.toggle('bg-border', idx !== i);
       });
     };
-    dots.forEach(function (d, idx) {
-      d.addEventListener('click', function () { i = idx; render(); });
-    });
+    dots.forEach(function (dd, idx) { dd.addEventListener('click', function () { i = idx; render(); }); });
     var prev = document.getElementById('testimonial-prev');
     var next = document.getElementById('testimonial-next');
     if (prev) prev.addEventListener('click', function () { i = (i - 1 + SLIDES.length) % SLIDES.length; render(); });

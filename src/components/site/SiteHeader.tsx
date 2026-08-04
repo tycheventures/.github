@@ -6,7 +6,7 @@ import { NAV, SITE } from "@/lib/site-data";
 const linkCls =
   "text-[13px] font-semibold uppercase tracking-wide text-card-foreground transition-colors hover:text-primary";
 
-export function SiteHeader() {
+export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
   const [openSub, setOpenSub] = useState<string | null>(null);
@@ -18,12 +18,16 @@ export function SiteHeader() {
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
+  const solid = !transparent || scrolled || open;
+
   return (
     <header
-      className={`fixed inset-x-0 top-0 z-50 bg-background transition-shadow ${
-        scrolled ? "shadow-card" : ""
-      }`}
+      data-transparent={transparent ? "true" : "false"}
+      className={`fixed inset-x-0 top-0 z-50 transition-shadow ${
+        solid ? "bg-background" : "bg-transparent"
+      } ${solid && scrolled ? "shadow-card" : ""}`}
     >
+
       <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3">
         <Link to="/" className="shrink-0" aria-label="Tyche Ventures home">
           <img

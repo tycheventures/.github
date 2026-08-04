@@ -41,6 +41,8 @@
   --color-brand: var(--brand);
   --color-brand-foreground: var(--brand-foreground);
   --color-brand-alt: var(--brand-alt);
+  --color-wave: var(--wave);
+  --color-wave-soft: var(--wave-soft);
   --color-surface: var(--surface);
   --color-surface-alt: var(--surface-alt);
   --color-footer: var(--footer);
@@ -77,6 +79,8 @@
   --brand: oklch(0.685 0.103 213.5);
   --brand-foreground: oklch(1 0 0);
   --brand-alt: oklch(0.505 0.146 326.5);
+  --wave: oklch(0.955 0.021 213.5);
+  --wave-soft: oklch(0.978 0.011 213.5);
   --surface: oklch(0.982 0 90);
   --surface-alt: oklch(0.976 0 90);
   --footer: oklch(0.29 0.005 260);
@@ -106,6 +110,8 @@
   --brand: oklch(0.685 0.103 213.5);
   --brand-foreground: oklch(0.16 0.04 277.7);
   --brand-alt: oklch(0.62 0.16 326.5);
+  --wave: oklch(0.26 0.045 213.5);
+  --wave-soft: oklch(0.23 0.035 213.5);
   --surface: oklch(0.22 0.05 277.7);
   --surface-alt: oklch(0.24 0.06 277.7);
   --footer: oklch(0.20 0.02 260);

@@ -41,7 +41,7 @@ function Index() {
       <main>
         {/* Hero */}
         <section
-          className="relative overflow-hidden bg-background bg-[url('/img/hero-banner.png')] bg-cover bg-[position:60%_center] bg-no-repeat lg:bg-[length:100%_auto] lg:bg-bottom"
+          className="relative overflow-hidden bg-background hero-banner bg-cover bg-[position:60%_center] bg-no-repeat lg:bg-[length:100%_auto] lg:bg-bottom"
         >
           <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-28 md:pb-24 md:pt-36 lg:min-h-[560px] lg:grid-cols-2">
             <div>

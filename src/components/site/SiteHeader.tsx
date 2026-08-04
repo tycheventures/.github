@@ -1,11 +1,15 @@
 import { Link } from "@tanstack/react-router";
-import { Menu, X } from "lucide-react";
+import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NAV, SITE } from "@/lib/site-data";
+
+const linkCls =
+  "text-[13px] font-semibold uppercase tracking-wide text-card-foreground transition-colors hover:text-primary";
 
 export function SiteHeader() {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
+  const [openSub, setOpenSub] = useState<string | null>(null);
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -31,27 +35,50 @@ export function SiteHeader() {
           />
         </Link>
 
-        <nav className="hidden items-center gap-7 lg:flex" aria-label="Main">
-          {NAV.map((item) =>
-            item.internal ? (
+        <nav className="hidden items-center gap-6 lg:flex" aria-label="Main">
+          {NAV.map((item) => {
+            if (item.children) {
+              return (
+                <div key={item.label} className="group relative">
+                  <a href={item.href} className={`${linkCls} inline-flex items-center gap-1`}>
+                    {item.label}
+                    <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
+                  </a>
+                  <div className="invisible absolute left-1/2 top-full z-50 w-64 -translate-x-1/2 pt-4 opacity-0 transition-opacity group-hover:visible group-hover:opacity-100 group-focus-within:visible group-focus-within:opacity-100">
+                    <ul className="rounded-sm border border-border bg-background py-2 shadow-card-hover">
+                      {item.children.map((c) => (
+                        <li key={c.label}>
+                          <a
+                            href={c.href}
+                            {...(c.external
+                              ? { target: "_blank", rel: "noopener nofollow noreferrer" }
+                              : {})}
+                            className="block px-5 py-2 text-[13px] text-muted-foreground transition-colors hover:text-primary"
+                          >
+                            {c.label}
+                          </a>
+                        </li>
+                      ))}
+                    </ul>
+                  </div>
+                </div>
+              );
+            }
+            return item.internal ? (
               <Link
                 key={item.label}
                 to={item.href}
-                className="text-[13px] font-semibold uppercase tracking-wide text-card-foreground transition-colors hover:text-primary"
+                className={linkCls}
                 activeProps={{ className: "text-primary" }}
               >
                 {item.label}
               </Link>
             ) : (
-              <a
-                key={item.label}
-                href={item.href}
-                className="text-[13px] font-semibold uppercase tracking-wide text-card-foreground transition-colors hover:text-primary"
-              >
+              <a key={item.label} href={item.href} className={linkCls}>
                 {item.label}
               </a>
-            ),
-          )}
+            );
+          })}
           <a
             href={`${SITE}/get-a-quote/`}
             className="rounded-sm bg-primary px-5 py-2.5 text-[13px] font-semibold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-accent"
@@ -72,11 +99,47 @@ export function SiteHeader() {
       </div>
 
       {open && (
-        <nav className="border-t border-border bg-background lg:hidden" aria-label="Mobile">
+        <nav
+          className="max-h-[75vh] overflow-y-auto border-t border-border bg-background lg:hidden"
+          aria-label="Mobile"
+        >
           <ul className="mx-auto max-w-6xl px-5 py-2">
             {NAV.map((item) => (
               <li key={item.label} className="border-b border-border last:border-0">
-                {item.internal ? (
+                {item.children ? (
+                  <>
+                    <button
+                      type="button"
+                      onClick={() => setOpenSub((v) => (v === item.label ? null : item.label))}
+                      aria-expanded={openSub === item.label}
+                      className="flex w-full items-center justify-between py-3 text-sm font-semibold uppercase tracking-wide text-card-foreground"
+                    >
+                      {item.label}
+                      <ChevronDown
+                        className={`h-4 w-4 transition-transform ${
+                          openSub === item.label ? "rotate-180" : ""
+                        }`}
+                      />
+                    </button>
+                    {openSub === item.label && (
+                      <ul className="pb-3 pl-3">
+                        {item.children.map((c) => (
+                          <li key={c.label}>
+                            <a
+                              href={c.href}
+                              {...(c.external
+                                ? { target: "_blank", rel: "noopener nofollow noreferrer" }
+                                : {})}
+                              className="block py-2 text-sm text-muted-foreground"
+                            >
+                              {c.label}
+                            </a>
+                          </li>
+                        ))}
+                      </ul>
+                    )}
+                  </>
+                ) : item.internal ? (
                   <Link
                     to={item.href}
                     onClick={() => setOpen(false)}

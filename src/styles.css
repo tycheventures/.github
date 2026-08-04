@@ -163,6 +163,7 @@
   }
 }
 
-@utility hero-banner {
+.hero-banner {
   background-image: url("/img/hero-banner.png");
 }
+

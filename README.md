@@ -1,20 +1,23 @@
-# Archive Revival
+# Tyche Ventures — Static Archive
 
-Uh, I have already a website with, uh, WordPress, but, uh, I, I just want to archive that website and convert it into a simple HTML CSS with exact same look, uh, using the logo, color scheme, uh, images. Here's the URL, and I, I am also sharing the, uh, web archive link where you will get more, uh, crisp look. Um, and current website look is a little bit broken at header and footer. So by using this, uh, web archive, you will get idea and combining both, uh, prepare a new, uh, HTML, CSS page, uh, and wherever needed, you can make the corrections.
+A static HTML/CSS rebuild of the Tyche Ventures homepage, preserving the original branding, imagery, and structure from the WordPress site and the 2021 web archive. Built to be published as a GitHub Pages site.
 
-https://tycheventures.com/
+Live WordPress site: [tycheventures.com](https://tycheventures.com)
 
-https://web.archive.org/web/20211222050527/https://tycheventures.com/
+## What's inside
 
-This project was built with [Lovable](https://lovable.dev).
+- `src/` — React/TanStack Start source for the homepage and about page.
+- `docs/` — Static export ready for GitHub Pages (`index.html`, `about.html`, `assets/style.css`, `assets/site.js`, `img/`).
+- `public/img/` — Original site assets (logo, client logos, project screenshots, icons, hero banner).
+- `profile/README.md` — GitHub profile readme used for the organization's public profile.
 
-## Build with Lovable
+## How to publish on GitHub Pages
 
-Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f687bdc5-30dc-4656-b2f9-39dba8e6880c).
-
-- **Ship faster**: describe what you want to build and Lovable handles the code.
-- **Stay in sync**: every change made in Lovable is committed straight to this repository.
-- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.
+1. Push the repo to GitHub.
+2. Go to **Settings → Pages** in the repository.
+3. Under **Build and deployment**, select **Deploy from a branch**.
+4. Choose the `main` branch and the `/docs` folder.
+5. Click **Save**. The site will be available at `https://<username>.github.io/<repository>`.
 
 ## Development
 
@@ -26,3 +29,19 @@ cd <repository-name>
 npm i
 npm run dev
 ```
+
+To regenerate the static export after editing the source:
+
+```sh
+npm run build
+python3 /tmp/browser/tv/export.py
+python3 /tmp/browser/tv/post.py
+```
+
+This project was built with [Lovable](https://lovable.dev).
+
+Continue developing this project in the [Lovable editor](https://lovable.dev/projects/f687bdc5-30dc-4656-b2f9-39dba8e6880c).
+
+- **Ship faster**: describe what you want to build and Lovable handles the code.
+- **Stay in sync**: every change made in Lovable is committed straight to this repository.
+- **Full ownership**: this code is yours. Push to `main` on GitHub and your changes sync back into Lovable, ready for your next prompt.

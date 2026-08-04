@@ -162,11 +162,12 @@ function Index() {
         </section>
 
         {/* Counters */}
-        <section className="relative bg-[var(--footer)] py-20">
+        <section className="relative bg-heading py-20">
           <div
-            className="absolute inset-0 bg-gradient-to-r from-secondary/30 via-transparent to-primary/25"
+            className="absolute inset-0 bg-gradient-to-r from-brand-alt/35 via-transparent to-brand/30"
             aria-hidden="true"
           />
+
 
           <div className="relative mx-auto grid max-w-6xl gap-10 px-5 sm:grid-cols-2 lg:grid-cols-4">
             {COUNTERS.map((c) => (

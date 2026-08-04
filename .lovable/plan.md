@@ -1,4 +1,4 @@
-# Hero polish, USP fix, and README updates
+# Hero polish, USP fix, redirect stubs, and README updates
 
 ## 1. Hero section
 - Give the hero a taller, full-width stage so the banner illustration sits fully inside it (min height around the viewport height on desktop, auto on mobile) and the image continues behind the transparent header, matching the original screenshot.
@@ -10,15 +10,21 @@
 - Give the section normal top padding, equal-height cards, and consistent text wrapping so all four cards line up.
 - Re-verify against the original archived look (bordered white cards with teal icons, sitting below the hero).
 
-## 3. profile/README.md
+## 3. Subpage redirect stubs
+- Identify all menu/footer links that point to pages not rebuilt in the static export (Services, Products, Work, Blog, Careers, Contact, etc.).
+- Build lightweight redirect stubs in the export for those subpages using `<meta http-equiv="refresh">` or JavaScript redirect so bookmarks to `/services/`, `/about/`, etc. still reach the target live site.
+- Update the header/footer links so they also point directly to the live WordPress URLs, matching the redirect stubs' targets.
+
+## 4. profile/README.md
 - Rewrite as a short profile overview: intro/tagline, About us, Services, Our products, Connect with us.
 - Remove the "Why choose us", "By the numbers", "Selected work", and "What clients say" sections.
 - Remove the WhatsApp link from the connect line.
 
-## 4. Repo README.md
+## 5. Repo README.md
 - Replace the raw prompt text at the top with a clear project description.
 - Add: quick overview of the project (static rebuild of tycheventures.com), what's inside (`src/` React source, `docs/` static export, `public/img/` assets, `profile/` GitHub profile readme), and how to publish/navigate to GitHub Pages (Settings → Pages → branch `main`, folder `/docs`) plus the live Pages URL pattern.
 - Keep the local development instructions.
 
-## 5. Re-export
-- Rebuild and regenerate `docs/` so the static export matches the updated hero and USP section, then verify the exported pages in a browser at desktop and mobile widths.
+## 6. Re-export
+- Rebuild and regenerate `docs/` so the static export matches the updated hero, USP section, and redirect stubs, then verify the exported pages in a browser at desktop and mobile widths.
+

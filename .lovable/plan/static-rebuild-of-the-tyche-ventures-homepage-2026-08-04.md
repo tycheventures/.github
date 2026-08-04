@@ -4,7 +4,7 @@ Rebuild tycheventures.com's homepage as a clean, self-contained page that matche
 
 ## Scope
 
-- Homepage only.
+- Homepage & about us only.
 - All images and the logo are downloaded and hosted inside the project, so the page keeps working if the WordPress site goes away.
 - No contact form (the site has none). All buttons and menu links keep their existing behaviour and point to the same URLs on tycheventures.com.
 
@@ -35,4 +35,4 @@ Corrections made where the original is broken or clumsy: proper responsive behav
 
 ## Not included
 
-Inner pages (Services, Work, About, Contact, Get A Quote, project case studies) — those links still go to the current WordPress site. Say the word if you want those converted next.
+Inner pages (Services, Work, Contact, Get A Quote, project case studies) — those links still go to the current WordPress site. Say the word if you want those converted next.

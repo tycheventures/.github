@@ -43,18 +43,22 @@ export const NAV: NavItem[] = [
 
 export const HIGHLIGHTS = [
   {
+    icon: "thumbs-up",
     title: "100 % Customer Satisfaction",
     text: "A Happy customer is our motto. We give our best to deliver 100 % customer satisfaction",
   },
   {
+    icon: "rupee",
     title: "Reasonable Pricing",
     text: "We have designed a reasonable pricing structure suitable for startups, mid-level business and large companies without compromising the work quality",
   },
   {
+    icon: "star",
     title: "Quality Solutions",
     text: "Our streamlined process and experienced team members deliver a high-quality service to our customers.",
   },
   {
+    icon: "team",
     title: "Skilled and Experienced Team",
     text: "Our experienced and well-versed team always focuses on the result-oriented delivery of digital solutions.",
   },

@@ -41,9 +41,9 @@ function Index() {
       <main>
         {/* Hero */}
         <section
-          className="relative overflow-hidden bg-background hero-banner bg-cover bg-[position:60%_center] bg-no-repeat lg:bg-[length:100%_auto] lg:bg-bottom"
+          className="relative overflow-hidden bg-background hero-banner bg-cover bg-[position:65%_center] bg-no-repeat lg:bg-[length:100%_auto] lg:bg-bottom"
         >
-          <div className="relative z-10 mx-auto grid max-w-6xl items-center gap-10 px-5 pb-16 pt-28 md:pb-24 md:pt-36 lg:min-h-[560px] lg:grid-cols-2">
+          <div className="relative z-10 mx-auto grid min-h-[520px] max-w-6xl items-center gap-10 px-5 pb-24 pt-32 md:min-h-[600px] md:pt-40 lg:min-h-[700px] lg:grid-cols-2 lg:pt-36">
             <div>
               <p className="font-display text-2xl font-normal text-heading sm:text-3xl">Welcome to</p>
               <h1 className="mt-2 font-display text-4xl font-semibold tracking-[0.04em] text-heading sm:text-5xl">
@@ -59,19 +59,17 @@ function Index() {
           </div>
         </section>
 
-
-
         {/* Highlights */}
-        <section className="mx-auto -mt-10 max-w-6xl px-5 pb-16 md:pb-20">
+        <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">
           <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
             {HIGHLIGHTS.map((h) => {
               const Icon = HIGHLIGHT_ICONS[h.icon] ?? Star;
               return (
                 <article
                   key={h.title}
-                  className="rounded-sm border border-border bg-card p-6 text-center shadow-card transition-shadow hover:shadow-card-hover"
+                  className="flex flex-col items-center rounded-sm border border-border bg-card p-6 text-center shadow-card transition-shadow hover:shadow-card-hover"
                 >
-                  <Icon className="mx-auto h-7 w-7 text-primary" aria-hidden="true" />
+                  <Icon className="h-7 w-7 text-primary" aria-hidden="true" />
                   <h2 className="mt-4 text-sm font-semibold leading-snug">{h.title}</h2>
                   <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{h.text}</p>
                 </article>
@@ -79,6 +77,7 @@ function Index() {
             })}
           </div>
         </section>
+
 
         {/* Services */}
         <section className="pb-16 md:pb-20">

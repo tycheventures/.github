@@ -162,11 +162,12 @@ function Index() {
         </section>
 
         {/* Counters */}
-        <section
-          className="relative bg-cover bg-center bg-no-repeat py-20"
-          style={{ backgroundImage: "url('/img/banner_7.jpg')" }}
-        >
-          <div className="absolute inset-0 bg-black/55" aria-hidden="true" />
+        <section className="relative bg-[var(--footer)] py-20">
+          <div
+            className="absolute inset-0 bg-gradient-to-r from-secondary/30 via-transparent to-primary/25"
+            aria-hidden="true"
+          />
+
           <div className="relative mx-auto grid max-w-6xl gap-10 px-5 sm:grid-cols-2 lg:grid-cols-4">
             {COUNTERS.map((c) => (
               <div key={c.label}>

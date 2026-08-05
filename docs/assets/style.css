@@ -80,6 +80,7 @@
   .top-1\/2 { top: 50%; }
   .top-3\.5 { top: calc(var(--spacing) * 3.5); }
   .top-4 { top: calc(var(--spacing) * 4); }
+  .top-\[-14px\] { top: -14px; }
   .top-\[1px\] { top: 1px; }
   .top-\[3px\] { top: 3px; }
   .top-\[50\%\] { top: 50%; }
@@ -126,7 +127,6 @@
   .mt-12 { margin-top: calc(var(--spacing) * 12); }
   .mt-24 { margin-top: calc(var(--spacing) * 24); }
   .mt-auto { margin-top: auto; }
-  .mr-1 { margin-right: var(--spacing); }
   .mr-2 { margin-right: calc(var(--spacing) * 2); }
   .mb-1 { margin-bottom: var(--spacing); }
   .mb-2\.5 { margin-bottom: calc(var(--spacing) * 2.5); }
@@ -472,7 +472,7 @@
   .pl-8 { padding-left: calc(var(--spacing) * 8); }
   .text-center { text-align: center; }
   .text-left { text-align: left; }
-  .align-\[-0\.35em\] { vertical-align: -0.35em; }
+  .indent-\[62px\] { text-indent: 62px; }
   .align-middle { vertical-align: middle; }
   .font-display { font-family: Montserrat, ui-sans-serif, system-ui, sans-serif; }
   .font-mono { font-family: var(--font-mono); }
@@ -520,7 +520,7 @@
   .tracking-widest { --tw-tracking: var(--tracking-widest); letter-spacing: var(--tracking-widest); }
   .break-words { overflow-wrap: break-word; }
   .whitespace-nowrap { white-space: nowrap; }
-  .text-\[rgba\(0\,0\,0\,0\.15\)\] { color: rgba(0, 0, 0, 0.15); }
+  .text-\[rgba\(0\,0\,0\,0\.12\)\] { color: rgba(0, 0, 0, 0.12); }
   .text-accent-foreground { color: var(--accent-foreground); }
   .text-card-foreground { color: var(--card-foreground); }
   .text-current { color: currentcolor; }

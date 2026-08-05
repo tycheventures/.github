@@ -1,4 +1,4 @@
-import asyncio, json, re, shutil, os
+import asyncio, json, re, shutil, os, subprocess, sys
 from pathlib import Path
 from playwright.async_api import async_playwright
 
@@ -254,5 +254,11 @@ async def main():
     (DOCS / ".nojekyll").write_text("")
     print("exported", list(pages), "css", len(css or ""), "redirects", len(REDIRECTS))
 
+    # gate publishing: every referenced asset URL must exist in docs/
+    code = subprocess.call([sys.executable, str(ROOT / "scripts" / "verify-docs.py")])
+    if code != 0:
+        raise SystemExit("export aborted: docs/ has missing asset references")
+
 
 asyncio.run(main())
+

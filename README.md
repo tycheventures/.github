@@ -15,11 +15,12 @@ Rebuilt from archive: https://web.archive.org/web/20211222050527/https://tycheve
 
 ## How to publish on GitHub Pages
 
-1. Push the repo to GitHub.
-2. Go to **Settings → Pages** in the repository.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Choose the `main` branch and the `/docs` folder.
-5. Click **Save**. The site will be available at `https://<username>.github.io/<repository>`.
+1. Regenerate and validate the export (see below) — publishing is only safe once `verify-docs.py` reports OK.
+2. Push the repo to GitHub.
+3. Go to **Settings → Pages** in the repository.
+4. Under **Build and deployment**, select **Deploy from a branch**.
+5. Choose the `main` branch and the `/docs` folder.
+6. Click **Save**. The site will be available at `https://<username>.github.io/<repository>`.
 
 ## Development
 
@@ -32,12 +33,18 @@ npm i
 npm run dev
 ```
 
-To regenerate the static export after editing the source:
+To regenerate the static export after editing the source (the dev server must be running on port 8080):
 
 ```sh
-npm run build
-python3 /tmp/browser/tv/export.py
-python3 /tmp/browser/tv/post.py
+python3 scripts/export-docs.py
+```
+
+The export finishes by running the asset validator, which fails the build if any
+CSS, JS, image, font or page URL referenced in `docs/` is missing. You can also
+run it on its own at any time:
+
+```sh
+python3 scripts/verify-docs.py          # add --verbose to list every reference
 ```
 
 This project was built with [Lovable](https://lovable.dev).

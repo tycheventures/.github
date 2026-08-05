@@ -33,12 +33,18 @@ npm i
 npm run dev
 ```
 
-To regenerate the static export after editing the source:
+To regenerate the static export after editing the source (the dev server must be running on port 8080):
 
 ```sh
-npm run build
-python3 /tmp/browser/tv/export.py
-python3 /tmp/browser/tv/post.py
+python3 scripts/export-docs.py
+```
+
+The export finishes by running the asset validator, which fails the build if any
+CSS, JS, image, font or page URL referenced in `docs/` is missing. You can also
+run it on its own at any time:
+
+```sh
+python3 scripts/verify-docs.py          # add --verbose to list every reference
 ```
 
 This project was built with [Lovable](https://lovable.dev).

@@ -88,7 +88,7 @@
   --surface-alt: oklch(0.976 0 90);
   --footer: oklch(0.29 0.005 260);
   --footer-foreground: oklch(0.98 0 0);
-  --footer-muted: oklch(0.78 0 0);
+  --footer-muted: oklch(0.9288 0 0);
 }
 
 .dark {
@@ -120,7 +120,7 @@
   --surface-alt: oklch(0.24 0.06 277.7);
   --footer: oklch(0.20 0.02 260);
   --footer-foreground: oklch(0.98 0 0);
-  --footer-muted: oklch(0.78 0 0);
+  --footer-muted: oklch(0.9288 0 0);
 }
 
 @layer base {

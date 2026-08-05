@@ -76,13 +76,13 @@
   .inset-y-0 { inset-block: 0px; }
   .-top-12 { top: calc(var(--spacing) * -12); }
   .top-0 { top: 0px; }
-  .top-0\.5 { top: calc(var(--spacing) * .5); }
   .top-1\.5 { top: calc(var(--spacing) * 1.5); }
   .top-1\/2 { top: 50%; }
   .top-3\.5 { top: calc(var(--spacing) * 3.5); }
   .top-4 { top: calc(var(--spacing) * 4); }
   .top-\[-10px\] { top: -10px; }
   .top-\[1px\] { top: 1px; }
+  .top-\[3px\] { top: 3px; }
   .top-\[50\%\] { top: 50%; }
   .top-\[60\%\] { top: 60%; }
   .top-full { top: 100%; }
@@ -406,7 +406,6 @@
   .bg-center { background-position: center center; }
   .bg-no-repeat { background-repeat: no-repeat; }
   .fill-current { fill: currentcolor; }
-  .fill-marker { fill: rgb(239, 64, 86); }
   .fill-primary { fill: var(--primary); }
   .object-contain { object-fit: contain; }
   .object-cover { object-fit: cover; }

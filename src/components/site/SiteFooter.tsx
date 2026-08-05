@@ -63,7 +63,7 @@ export function SiteFooter() {
                   className="inline-flex items-start gap-2.5 text-[15px] font-normal leading-[26px] text-footer-muted transition-colors duration-300 hover:translate-x-0.5 hover:text-footer-foreground"
                 >
                   <ChevronRight
-                    className="mt-1 h-4 w-4 shrink-0 fill-[#ef4056] text-[#ef4056]"
+                    className="mt-1 h-4 w-4 shrink-0 fill-marker text-marker"
                     aria-hidden="true"
                   />
                   {s.label}

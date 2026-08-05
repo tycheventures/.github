@@ -199,7 +199,7 @@ function Index() {
                       {p.title}
                     </h3>
                   </div>
-                  <span className="absolute inset-x-0 bottom-0 h-[3px] w-0 bg-primary transition-all duration-500 group-hover:w-full" />
+                  <span className="absolute inset-x-0 bottom-0 h-[3px] w-0 bg-marker transition-all duration-500 group-hover:w-full" />
                 </a>
               ))}
             </div>

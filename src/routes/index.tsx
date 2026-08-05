@@ -2,6 +2,7 @@ import { createFileRoute } from "@tanstack/react-router";
 import { Monitor, Settings, User } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { BackToTop } from "@/components/site/BackToTop";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { CountUp } from "@/components/site/CountUp";
 import { HighlightCard } from "@/components/site/HighlightCard";
@@ -278,6 +279,7 @@ function Index() {
       </main>
 
       <SiteFooter />
+      <BackToTop />
     </div>
   );
 }

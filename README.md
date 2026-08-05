@@ -15,11 +15,12 @@ Rebuilt from archive: https://web.archive.org/web/20211222050527/https://tycheve
 
 ## How to publish on GitHub Pages
 
-1. Push the repo to GitHub.
-2. Go to **Settings → Pages** in the repository.
-3. Under **Build and deployment**, select **Deploy from a branch**.
-4. Choose the `main` branch and the `/docs` folder.
-5. Click **Save**. The site will be available at `https://<username>.github.io/<repository>`.
+1. Regenerate and validate the export (see below) — publishing is only safe once `verify-docs.py` reports OK.
+2. Push the repo to GitHub.
+3. Go to **Settings → Pages** in the repository.
+4. Under **Build and deployment**, select **Deploy from a branch**.
+5. Choose the `main` branch and the `/docs` folder.
+6. Click **Save**. The site will be available at `https://<username>.github.io/<repository>`.
 
 ## Development
 

@@ -99,7 +99,7 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="container-tyche flex flex-col items-center gap-4 px-5 py-6 text-center md:flex-row md:justify-between md:text-left">
+        <div className="container-tyche flex flex-col items-center gap-4 py-6 text-center md:flex-row md:justify-between md:text-left">
           <p className="text-base font-normal leading-6 text-footer-muted">
             &copy; {new Date().getFullYear()} Tyche Ventures. All Rights Reserved.
           </p>

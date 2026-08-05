@@ -159,7 +159,7 @@ function Index() {
 
         {/* Purple CTA band */}
         <section className="bg-accent">
-          <div className="container-tyche flex flex-col items-center gap-5 px-5 py-10 text-center md:flex-row md:justify-between md:text-left">
+          <div className="container-tyche flex flex-col items-center gap-5 py-10 text-center md:flex-row md:justify-between md:text-left">
             <p className="text-2xl font-medium leading-[34px] text-accent-foreground">
               Talk to our experts today and get professional design, and development services.
             </p>

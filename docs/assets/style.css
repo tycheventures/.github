@@ -1016,7 +1016,7 @@
   0%, 49% { opacity: 1; }
   50%, 100% { opacity: 0; }
 }
-.hero-banner { background-image: url("../img/hero-banner.png"); }
+.hero-banner { background-image: url("../img/hero-banner.webp"); }
 .counter-bg { background-image: url("../img/counter-bg.webp"); }
 @property --tw-translate-x { syntax: "*"; inherits: false; initial-value: 0; }
 @property --tw-translate-y { syntax: "*"; inherits: false; initial-value: 0; }

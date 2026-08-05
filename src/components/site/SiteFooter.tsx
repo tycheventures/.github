@@ -63,6 +63,9 @@ export function SiteFooter() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
+                  data-ga-event="footer_link_click"
+                  data-ga-section="footer_services"
+                  data-ga-label={s.label}
                   className="relative inline-flex pl-4 text-[15px] font-normal leading-[20px] text-footer-muted transition-all duration-300 hover:translate-x-0.5 hover:text-footer-foreground"
                 >
                   <ChevronRight
@@ -89,6 +92,9 @@ export function SiteFooter() {
                     target="_blank"
                     rel="noopener noreferrer"
                     aria-label={s.label}
+                    data-ga-event="social_click"
+                    data-ga-section="footer_social"
+                    data-ga-label={s.label}
                     className={`inline-flex h-10 w-10 items-center justify-center rounded-full text-footer-foreground transition-opacity hover:opacity-80 ${
                       SOCIAL_COLORS[s.label] ?? "bg-primary"
                     }`}
@@ -122,6 +128,9 @@ export function SiteFooter() {
                     href={l.href}
                     target="_blank"
                     rel="noopener noreferrer"
+                    data-ga-event="footer_link_click"
+                    data-ga-section="footer_bottom"
+                    data-ga-label={l.label}
                     className="text-sm font-normal leading-6 text-footer-muted transition-colors duration-300 hover:text-footer-foreground"
                   >
                     {l.label}

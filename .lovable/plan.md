@@ -14,35 +14,32 @@ The header, footer and CTA buttons on both live pages also link to `https://tych
 
 ## Redirect targets
 
-Pages that live on now go to the matching page on WPGenius; the rest stay inside the export.
+Crawled `https://wpgenius.in/` (sitemaps: page, services, portfolio, post). Available pages there: `/about/`, `/services/`, `/work/`, `/blog/`, `/careers/`, `/contact/`, `/testimonial/`, `/privacy-policy/`, `/terms-of-use/`, plus service pages `wordpress-plugin-development`, `wordpress-custom-theme-devlopment`, `wordpress-design-development-customization`, `wordpress-doctor`, `wordpress-learning-management-systems`, `wordpress-support-maintenance`, `hire-a-developer`.
 
 | Old URL | Target |
 | --- | --- |
-| `/work/` and each `/work/<project>/` | WPGenius portfolio page — link needed |
-| `/services/` | WPGenius services page — link needed |
-| `/services/website-designing-and-development/` | link needed |
-| `/services/e-commerce-development/` | link needed |
-| `/services/search-engine-optimization/` | link needed |
-| `/services/digital-marketing-services/` | link needed |
-| `/services/graphics-design-services/` | link needed |
-| `/services/job-portal-development/` | link needed |
-| `/services/learning-management-system/` | link needed |
-| `/services/annual-maintenance-contract/` | link needed |
-| `/service/website-designing/` | link needed |
-| `/service/dynamic-website-development/` | link needed |
-| `/service/seo/` | link needed |
-| `/service/digital-marketing/` | link needed |
-| `/service/graphics-design/` | link needed |
-| `/service/domain-and-hosting/` | link needed |
-| `/blog/` | link needed |
-| `/careers/` | link needed |
-| `/contact/` | link needed |
-| `/get-a-quote/` | link needed |
+| `/work/` and each `/work/<project>/` | `https://wpgenius.in/work/` |
+| `/services/` and `/service/` | `https://wpgenius.in/services/` |
+| `/services/website-designing-and-development/` | `https://wpgenius.in/services/wordpress-design-development-customization/` |
+| `/service/website-designing/` | `https://wpgenius.in/services/wordpress-design-development-customization/` |
+| `/service/dynamic-website-development/` | `https://wpgenius.in/services/wordpress-custom-theme-devlopment/` |
+| `/services/learning-management-system/` | `https://wpgenius.in/services/wordpress-learning-management-systems/` |
+| `/services/annual-maintenance-contract/` | `https://wpgenius.in/services/wordpress-support-maintenance/` |
+| `/services/e-commerce-development/` | `https://wpgenius.in/services/` (no matching page) |
+| `/services/job-portal-development/` | `https://wpgenius.in/services/` (no matching page) |
+| `/services/search-engine-optimization/`, `/service/seo/` | `https://wpgenius.in/services/` (no matching page) |
+| `/services/digital-marketing-services/`, `/service/digital-marketing/` | `https://wpgenius.in/services/` (no matching page) |
+| `/services/graphics-design-services/`, `/service/graphics-design/` | `https://wpgenius.in/services/` (no matching page) |
+| `/service/domain-and-hosting/` | `https://shop.fenixhost.in/` (FenixHost is the hosting product) |
+| `/blog/` | `https://wpgenius.in/blog/` |
+| `/careers/` | `https://wpgenius.in/careers/` |
+| `/contact/` | `https://wpgenius.in/contact/` |
+| `/get-a-quote/` | `https://wpgenius.in/contact/` (no quote form on WPGenius) |
 | `/products/` | stays on this site — homepage products section (drop the Plugins Gallery and Themes Expert product links) |
-| `/privacy-policy/` | stays on this site — homepage (until rebuilt) |
+| `/privacy-policy/` | `https://wpgenius.in/privacy-policy/` |
 | `/about.html` | `/about/` (already correct) |
 
-Where a specific WPGenius page doesn't exist, that URL falls back to the closest WPGenius page (services or home).
+
 
 ## Fixes
 

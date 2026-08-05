@@ -1,7 +1,8 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { Monitor, Settings, Users } from "lucide-react";
+import { Monitor, Settings, User } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { BackToTop } from "@/components/site/BackToTop";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { CountUp } from "@/components/site/CountUp";
 import { HighlightCard } from "@/components/site/HighlightCard";
@@ -93,9 +94,17 @@ function Index() {
                 VENTURES
                 <span className="sr-only"> — Website Design &amp; Development Agency</span>
               </h1>
-              <p className="mt-4 max-w-md text-[15px] leading-[25px] text-muted-foreground sm:text-base">
+              <p className="mt-4 max-w-xl text-lg font-medium leading-[28px] text-muted-foreground sm:text-xl lg:text-2xl lg:leading-[34px]">
                 <TypedTagline text="Building Brands With Passion And Ulterior Motive" />
               </p>
+              <a
+                href={`${SITE}/get-a-quote/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-quote mt-7"
+              >
+                Get A Quote
+              </a>
             </div>
             <div aria-hidden="true" className="hidden lg:block" />
           </div>
@@ -115,7 +124,7 @@ function Index() {
         <section className="container-tyche py-16 md:py-20">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {HIGHLIGHTS.map((h) => (
-              <HighlightCard key={h.title} icon={h.icon} title={h.title} text={h.text} as="h2" />
+              <HighlightCard key={h.title} icon={h.icon} title={h.title} text={h.text} />
             ))}
           </div>
         </section>
@@ -167,7 +176,7 @@ function Index() {
               href={`${SITE}/get-a-quote/`}
               target="_blank"
               rel="noopener noreferrer"
-              className="shrink-0 rounded-sm border border-accent-foreground/70 px-7 py-3 text-[15px] font-medium text-accent-foreground transition-colors duration-300 hover:bg-accent-foreground hover:text-accent"
+              className="btn-quote btn-quote-on-accent shrink-0"
             >
               Get A Quote
             </a>
@@ -235,8 +244,8 @@ function Index() {
         {/* Clients */}
         <section className="py-16 md:py-20">
           <div className="container-tyche">
-            <SectionTitle icon={Users}>Who Trusted Us</SectionTitle>
-            <ul className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
+            <SectionTitle icon={User}>Who Trusted Us</SectionTitle>
+            <ul className="mx-auto mt-12 grid grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-5">
               {CLIENTS.map((c) => (
                 <li key={c.name}>
                   <a
@@ -263,13 +272,14 @@ function Index() {
         {/* Testimonials */}
         <section className="bg-surface py-16 md:py-20">
           <div className="container-tyche">
-            <SectionTitle icon={Users}>Our Client Says</SectionTitle>
+            <SectionTitle icon={User}>Our Client Says</SectionTitle>
             <Testimonials />
           </div>
         </section>
       </main>
 
       <SiteFooter />
+      <BackToTop />
     </div>
   );
 }

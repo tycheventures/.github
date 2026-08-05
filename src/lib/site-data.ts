@@ -288,6 +288,7 @@ export const FOOTER_LINKS = [
 
 export const SOCIALS = [
   { label: "WhatsApp", href: "https://wa.me/919225131588" },
+  { label: "Skype", href: "skype:tycheventures?chat" },
   { label: "LinkedIn", href: "https://www.linkedin.com/company/tycheventures" },
   { label: "Facebook", href: "https://www.facebook.com/tycheventures" },
   { label: "Twitter", href: "https://twitter.com/tycheventures" },

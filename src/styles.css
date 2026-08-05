@@ -87,7 +87,7 @@
   --wave-soft: oklch(0.978 0.011 213.5);
   --surface: oklch(0.982 0 90);
   --surface-alt: oklch(0.976 0 90);
-  --footer: oklch(0.29 0.005 260);
+  --footer: oklch(0.3211 0 0);
   --footer-foreground: oklch(0.98 0 0);
   --footer-muted: oklch(0.9288 0 0);
 }
@@ -189,4 +189,33 @@
 
 @utility counter-overlay {
   background-color: rgb(0 0 0 / 0.7);
+}
+
+@utility btn-quote {
+  display: inline-block;
+  background-color: #8f4190;
+  border: 2px solid #8f4190;
+  border-radius: 7px 0;
+  padding: 13px 24px;
+  font-size: 15px;
+  font-weight: 600;
+  line-height: 1;
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  color: #ffffff;
+  transition: background-color 0.3s ease, color 0.3s ease;
+
+  &:hover {
+    background-color: transparent;
+    color: #8f4190;
+  }
+}
+
+@utility btn-quote-on-accent {
+  border-color: #ffffff;
+
+  &:hover {
+    background-color: #ffffff;
+    color: #8f4190;
+  }
 }

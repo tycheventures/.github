@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { BackToTop } from "@/components/site/BackToTop";
 import { HighlightCard } from "@/components/site/HighlightCard";
 import { HIGHLIGHTS } from "@/lib/site-data";
 
@@ -91,6 +92,7 @@ function About() {
       </main>
 
       <SiteFooter />
+      <BackToTop />
     </div>
   );
 }

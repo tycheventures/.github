@@ -8,7 +8,7 @@ import { CountUp } from "@/components/site/CountUp";
 import { HighlightCard } from "@/components/site/HighlightCard";
 import { Testimonials } from "@/components/site/Testimonials";
 import { TypedTagline } from "@/components/site/TypedTagline";
-import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, SERVICES, SITE, SOCIALS } from "@/lib/site-data";
+import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, QUOTE_URL, SERVICES, SITE, SOCIALS, WPG_WORK } from "@/lib/site-data";
 
 
 const TITLE = "Tyche Ventures — Website Design & Development Agency";
@@ -98,7 +98,7 @@ function Index() {
                 <TypedTagline text="Building Brands With Passion And Ulterior Motive" />
               </p>
               <a
-                href={`${SITE}/get-a-quote/`}
+                href={QUOTE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-quote mt-7"
@@ -173,7 +173,7 @@ function Index() {
               Talk to our experts today and get professional design, and development services.
             </p>
             <a
-              href={`${SITE}/get-a-quote/`}
+              href={QUOTE_URL}
               target="_blank"
               rel="noopener noreferrer"
               className="btn-quote btn-quote-on-accent shrink-0"
@@ -214,7 +214,7 @@ function Index() {
             </div>
             <div className="mt-12 text-center">
               <a
-                href={`${SITE}/work/`}
+                href={WPG_WORK}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-sm border border-primary px-8 py-3 text-[15px] font-semibold uppercase tracking-wide text-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"

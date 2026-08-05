@@ -34,7 +34,7 @@ export function Testimonials() {
           <blockquote className="testimonial-lines relative text-[17px] font-normal leading-[31px] text-muted-foreground">
             <span
               aria-hidden="true"
-              className="mr-1 align-[-0.35em] font-display text-[64px] leading-none text-border"
+              className="mr-1 align-[-0.35em] font-display text-[64px] leading-none text-[rgba(0,0,0,0.15)]"
             >
               &rdquo;
             </span>

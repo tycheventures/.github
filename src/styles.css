@@ -225,8 +225,8 @@
     to bottom,
     transparent 0,
     transparent 26px,
-    var(--border) 26px,
-    var(--border) 27px,
+    rgba(0, 0, 0, 0.1) 26px,
+    rgba(0, 0, 0, 0.1) 27px,
     transparent 27px,
     transparent 31px
   );

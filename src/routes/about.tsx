@@ -38,7 +38,7 @@ function About() {
         <section className="bg-surface py-14 md:py-20">
           <div className="mx-auto max-w-6xl px-5 text-center">
             <h1 className="font-display text-4xl font-semibold tracking-[0.08em] text-heading md:text-5xl">
-              About
+              About Tyche Ventures
             </h1>
             <img
               src="/img/taychi-230x70.png"

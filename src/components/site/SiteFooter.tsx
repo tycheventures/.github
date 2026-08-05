@@ -60,10 +60,10 @@ export function SiteFooter() {
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-start gap-2.5 text-[17px] font-normal leading-[26px] text-footer-muted transition-colors duration-300 hover:translate-x-0.5 hover:text-footer-foreground"
+                  className="inline-flex items-start gap-2.5 text-[15px] font-normal leading-[26px] text-footer-muted transition-colors duration-300 hover:translate-x-0.5 hover:text-footer-foreground"
                 >
                   <ChevronRight
-                    className="mt-1 h-4 w-4 shrink-0 fill-[#ef4056] text-[#ef4056]"
+                    className="mt-1 h-4 w-4 shrink-0 fill-marker text-marker"
                     aria-hidden="true"
                   />
                   {s.label}
@@ -100,7 +100,7 @@ export function SiteFooter() {
 
       <div className="border-t border-white/10">
         <div className="container-tyche flex flex-col items-center gap-4 py-6 text-center md:flex-row md:justify-between md:text-left">
-          <p className="text-base font-normal leading-6 text-footer-muted">
+          <p className="text-sm font-normal leading-6 text-footer-muted">
             &copy; {new Date().getFullYear()} Tyche Ventures. All Rights Reserved.
           </p>
           <ul className="flex flex-wrap items-center justify-center gap-x-4 gap-y-2">
@@ -109,7 +109,7 @@ export function SiteFooter() {
                 {l.internal ? (
                   <Link
                     to={l.href}
-                    className="text-base font-normal leading-6 text-footer-muted transition-colors hover:text-footer-foreground"
+                    className="text-sm font-normal leading-6 text-footer-muted transition-colors hover:text-footer-foreground"
                   >
                     {l.label}
                   </Link>
@@ -118,7 +118,7 @@ export function SiteFooter() {
                     href={l.href}
                     target="_blank"
                     rel="noopener noreferrer"
-                    className="text-base font-normal leading-6 text-footer-muted transition-colors duration-300 hover:text-footer-foreground"
+                    className="text-sm font-normal leading-6 text-footer-muted transition-colors duration-300 hover:text-footer-foreground"
                   >
                     {l.label}
                   </a>

@@ -199,7 +199,7 @@ function Index() {
                       {p.title}
                     </h3>
                   </div>
-                  <span className="absolute inset-x-0 bottom-0 h-[3px] w-0 bg-primary transition-all duration-500 group-hover:w-full" />
+                  <span className="absolute inset-x-0 bottom-0 h-[3px] w-0 bg-marker transition-all duration-500 group-hover:w-full" />
                 </a>
               ))}
             </div>
@@ -218,7 +218,7 @@ function Index() {
 
         {/* Counters */}
         <section className="counter-bg relative bg-heading bg-cover bg-center bg-no-repeat py-20">
-          <div className="absolute inset-0 bg-heading/75" aria-hidden="true" />
+          <div className="counter-overlay absolute inset-0" aria-hidden="true" />
 
           <div className="container-tyche relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {COUNTERS.map((c) => (

@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { HighlightCard } from "@/components/site/HighlightCard";
 import { HIGHLIGHTS } from "@/lib/site-data";
 
 const TITLE = "About Tyche Ventures — Kolhapur Web Design Agency";

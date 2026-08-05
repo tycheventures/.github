@@ -18,7 +18,7 @@ SKIP_PREFIXES = ("http://", "https://", "//", "mailto:", "tel:", "data:", "javas
 HTML_REF_RE = re.compile(r'(?:href|src)\s*=\s*"([^"]+)"', re.I)
 SRCSET_RE = re.compile(r'srcset\s*=\s*"([^"]+)"', re.I)
 CSS_URL_RE = re.compile(r'url\(\s*["\']?([^"\')]+)["\']?\s*\)', re.I)
-JS_ASSET_RE = re.compile(r'["\'((?:\.\./)*(?:assets|img|fonts)/[A-Za-z0-9_\-./]+)["\']')
+JS_ASSET_RE = re.compile(r'["\']((?:\.\./)*(?:assets|img|fonts)/[A-Za-z0-9_\-./]+)["\']')
 
 
 def is_local(ref: str) -> bool:

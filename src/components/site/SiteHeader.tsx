@@ -91,7 +91,7 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             href={`${SITE}/get-a-quote/`}
             target="_blank"
             rel="noopener noreferrer"
-            className="rounded-sm bg-primary px-5 py-2.5 text-[14px] font-semibold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-accent"
+            className="btn-quote"
           >
             Get A Quote
           </a>
@@ -174,7 +174,7 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                 href={`${SITE}/get-a-quote/`}
                 target="_blank"
                 rel="noopener noreferrer"
-                className="inline-block rounded-sm bg-primary px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-primary-foreground"
+                className="btn-quote"
               >
                 Get A Quote
               </a>

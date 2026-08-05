@@ -96,6 +96,14 @@ function Index() {
               <p className="mt-4 max-w-xl text-lg font-medium leading-[28px] text-muted-foreground sm:text-xl lg:text-2xl lg:leading-[34px]">
                 <TypedTagline text="Building Brands With Passion And Ulterior Motive" />
               </p>
+              <a
+                href={`${SITE}/get-a-quote/`}
+                target="_blank"
+                rel="noopener noreferrer"
+                className="btn-quote mt-7"
+              >
+                Get A Quote
+              </a>
             </div>
             <div aria-hidden="true" className="hidden lg:block" />
           </div>

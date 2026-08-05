@@ -96,6 +96,14 @@ Removed: contact details, "Connect with us", and everything else currently in th
 
 Across the rebuilt site (React pages and the exported `docs/` HTML), every link pointing off this static copy — main site sections, product sites, client/project sites, social links — gets `target="_blank" rel="noopener noreferrer"`. Internal links (home ↔ about) stay in the same tab.
 
+## Counter section background
+
+The supplied handshake/contract desk photo replaces the current placeholder background behind the stats counters. It is added to `public/img/` (and copied into `docs/img/`), used full-bleed with `background-size: cover`, centre positioning, and a dark overlay so the white numbers and labels stay legible at all widths.
+
+## README logo
+
+`profile/README.md` opens with the Tyche Ventures logo image (`public/img/logo.png`, referenced by its raw GitHub URL) instead of the plain text company name, centred and sized for GitHub, with the tagline underneath.
+
 
 ## Static export
 

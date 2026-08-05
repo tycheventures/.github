@@ -1082,3 +1082,4 @@
 
 .hero-banner{background-image:url("../img/hero-banner.png")}
 .counter-bg{background-image:url("../img/counter-bg.jpg")}
+.testimonial-lines{background-image:repeating-linear-gradient(to bottom,transparent 0,transparent 42px,var(--border) 42px,var(--border) 43px);background-size:100% 43px}

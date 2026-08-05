@@ -213,6 +213,9 @@ function Index() {
                 <a
                   key={p.title}
                   href={p.href}
+                  data-ga-event="project_click"
+                  data-ga-section="featured_projects"
+                  data-ga-label={p.title}
                   target="_blank"
                   rel="noopener noreferrer nofollow"
                   className="group relative block overflow-hidden rounded-sm shadow-card transition-shadow duration-300 hover:shadow-card-hover"

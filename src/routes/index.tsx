@@ -22,6 +22,7 @@ export const Route = createFileRoute("/")({
       { title: TITLE },
       { name: "description", content: DESC },
       { name: "robots", content: "index,follow" },
+      { name: "google-site-verification", content: "o_TVVb2Is-hngngOgbLZzo_811HImqrvBmYNdwuBOC0" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
       { property: "og:url", content: `${SITE}/` },
@@ -30,6 +31,7 @@ export const Route = createFileRoute("/")({
       { name: "twitter:card", content: "summary_large_image" },
       { name: "twitter:image", content: OG_IMAGE },
     ],
+
     links: [
       { rel: "canonical", href: `${SITE}/` },
       { rel: "preload", as: "image", href: "/img/hero-banner.webp" },

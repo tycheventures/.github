@@ -8,7 +8,7 @@ import {
   MessageCircle,
   MessageSquare,
   Globe,
-  TriangleRight,
+  ChevronRight,
 } from "lucide-react";
 import { FOOTER_LINKS, FOOTER_SERVICES, SOCIALS } from "@/lib/site-data";
 
@@ -65,8 +65,9 @@ export function SiteFooter() {
                   rel="noopener noreferrer"
                   className="relative inline-flex pl-4 text-[15px] font-normal leading-[20px] text-footer-muted transition-all duration-300 hover:translate-x-0.5 hover:text-footer-foreground"
                 >
-                  <TriangleRight
-                    className="absolute left-0 top-0.5 h-4 w-4 fill-marker text-marker"
+                  <ChevronRight
+                    className="absolute left-0 top-[3px] h-3.5 w-3.5 text-marker"
+                    strokeWidth={3}
                     aria-hidden="true"
                   />
                   {s.label}

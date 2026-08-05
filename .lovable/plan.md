@@ -36,9 +36,18 @@
 
 Source of truth: the Wayback snapshot `https://web.archive.org/web/20211222050527/https://tycheventures.com/` and its linked stylesheets. Those files will be fetched and read, and the actual declarations copied across for the sections below: font sizes, line heights, letter spacing, box-shadow values, transition timings, and hover states. Typography stays Montserrat throughout (already loaded). Anything the original defines becomes the source of truth; only genuinely broken rules get corrected.
 
+## Site-wide typography pass
+
+The current rebuild shrank text almost everywhere (13px body, small section headings). Every type value is reset from the archived stylesheet instead of being estimated:
+
+- Body/base copy back up to the original size (14–16px range as the source defines), not 13px.
+- Section headings, card headings, service titles, project captions, counter labels, footer headings and links, and nav links all take their source size, weight, line-height, and letter-spacing.
+- Font weights matched exactly (the original mixes 400/500/600/700 deliberately) — no blanket semibold/medium substitutions.
+- Heading colour and muted body colour taken from the source values.
+
 ## USP / highlights cards
 
-- Heading 24px, body 14px (as in your original), with the original line-height and heading colour.
+- Heading 24px, body 14px (as in your original), with the original line-height, weight, and heading colour.
 - Replace the current tight `shadow-card` with the original's soft, wide, low-opacity shadow so the cards read as gently lifted rather than hard-edged.
 - Match original card padding, radius, border treatment, and centre alignment; equal-height cards.
 - Restore the original hover transition on the cards.

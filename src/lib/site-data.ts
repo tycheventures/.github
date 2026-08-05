@@ -1,5 +1,20 @@
 export const SITE = "https://tycheventures.com";
 
+/** Legacy Tyche Ventures pages now live on WPGenius. */
+export const WPG = "https://wpgenius.in";
+export const WPG_SERVICES = `${WPG}/services/`;
+export const WPG_WORK = `${WPG}/work/`;
+export const WPG_BLOG = `${WPG}/blog/`;
+export const WPG_CAREERS = `${WPG}/careers/`;
+export const WPG_CONTACT = `${WPG}/contact/`;
+export const WPG_PRIVACY = `${WPG}/privacy-policy/`;
+export const QUOTE_URL = WPG_CONTACT;
+export const WPG_DESIGN = `${WPG}/services/wordpress-design-development-customization/`;
+export const WPG_THEME = `${WPG}/services/wordpress-custom-theme-devlopment/`;
+export const WPG_LMS = `${WPG}/services/wordpress-learning-management-systems/`;
+export const WPG_MAINTENANCE = `${WPG}/services/wordpress-support-maintenance/`;
+export const FENIXHOST = "https://shop.fenixhost.in/";
+
 type NavChild = { label: string; href: string; external?: boolean };
 type NavItem = { label: string; href: string; internal?: boolean; children?: NavChild[] };
 

@@ -4,6 +4,8 @@ A static HTML/CSS rebuild of the Tyche Ventures homepage, preserving the origina
 
 Live WordPress site: [tycheventures.com](https://tycheventures.com)
 
+Rebuilt from archive: https://web.archive.org/web/20211222050527/https://tycheventures.com/
+
 ## What's inside
 
 - `src/` — React/TanStack Start source for the homepage and about page.

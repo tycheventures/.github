@@ -8,7 +8,7 @@ import { CountUp } from "@/components/site/CountUp";
 import { HighlightCard } from "@/components/site/HighlightCard";
 import { Testimonials } from "@/components/site/Testimonials";
 import { TypedTagline } from "@/components/site/TypedTagline";
-import { CLIENTS, COUNTERS, HIGHLIGHTS, OG_IMAGE, PRODUCTS, PROJECTS, QUOTE_URL, SERVICES, SITE, SOCIALS, WPG_WORK } from "@/lib/site-data";
+import { CLIENTS, COUNTERS, HIGHLIGHTS, OG_IMAGE, PROJECTS, QUOTE_URL, SERVICES, SITE, SOCIALS, WPG_WORK } from "@/lib/site-data";
 
 
 const TITLE = "Tyche Ventures — Website Design & Development Agency";
@@ -139,29 +139,6 @@ function Index() {
           </div>
         </section>
 
-        {/* Products */}
-        <section id="products" className="scroll-mt-24 bg-wave-soft py-16 md:py-20">
-          <div className="container-tyche">
-            <SectionTitle icon={Settings}>Our Products</SectionTitle>
-            <div className="mt-10 grid gap-6 md:grid-cols-2">
-              {PRODUCTS.map((p) => (
-                <a
-                  key={p.name}
-                  href={p.href}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="block rounded-sm bg-background p-7 shadow-card transition-shadow duration-300 hover:shadow-card-hover"
-                >
-                  <h3 className="font-display text-[18px] font-bold text-title">{p.name}</h3>
-                  <p className="mt-3 text-[15px] leading-[26px] text-muted-foreground">{p.text}</p>
-                  <span className="mt-4 inline-block text-[14px] font-semibold uppercase tracking-wide text-primary">
-                    Visit site
-                  </span>
-                </a>
-              ))}
-            </div>
-          </div>
-        </section>
 
 
 

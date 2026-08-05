@@ -50,16 +50,6 @@ export const NAV: NavItem[] = [
       },
     ],
   },
-  {
-    label: "Products",
-    href: "#products",
-    anchor: true,
-    children: [
-
-      { label: "Team WPGenius", href: "https://wpgenius.in/", external: true },
-      { label: "FenixHost", href: FENIXHOST, external: true },
-    ],
-  },
   { label: "Blog", href: WPG_BLOG },
   { label: "Careers", href: WPG_CAREERS },
   { label: "Contact", href: WPG_CONTACT },
@@ -127,18 +117,6 @@ export const SERVICES = [
   },
 ];
 
-export const PRODUCTS = [
-  {
-    name: "Team WPGenius",
-    href: "https://wpgenius.in/",
-    text: "Our WordPress arm — custom theme and plugin development, site builds, migrations, speed optimisation and ongoing support and maintenance contracts.",
-  },
-  {
-    name: "FenixHost",
-    href: FENIXHOST,
-    text: "Domain registration, Linux and Windows hosting, dedicated servers and cloud hosting, with managed setup and support for the sites we build.",
-  },
-];
 
 
 

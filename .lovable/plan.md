@@ -71,6 +71,25 @@ Audit every interactive element against the original CSS and restore what is mis
 - Apply the original type scale (quote size, name/role size, line-height) instead of the current smaller text.
 - Match the original layout: avatar treatment, quote mark, spacing, card/shadow styling, and slider controls/dots.
 
+## Who Trusted Us logos
+
+- Increase logo size inside each tile (taller max-height, wider max-width) and grow the tile height to suit, so the client marks are clearly legible instead of tiny.
+- Keep the bordered grid and hover accent; keep logos evenly sized and centred.
+
+## profile/README.md rewrite
+
+Short and simple, in this order only:
+
+- Company name
+- Tagline
+- About us (2–3 sentences)
+- Services offered
+- Products — only these two: **Team WPGenius** (WordPress development and support services) and **FenixHost** (domain, hosting and server solutions)
+
+Removed: contact details, "Connect with us", and everything else currently in the file.
+
+Suggested extras (say if you want them): a one-line website link under the company name, and the services list kept as plain bullets without per-service links so the file stays clean.
+
 ## Static export
 
 - Rebuild and regenerate `docs/` (index + about + redirect stubs) so the published GitHub Pages copy matches, and re-check the exported `docs/assets/style.css` background rules and `site.js` transparent→solid toggle.

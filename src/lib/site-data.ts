@@ -209,7 +209,62 @@ export const TESTIMONIALS = [
     company: "Marin Web Pro",
     href: "http://marinwebpro.com/",
   },
+  {
+    img: "/img/Dinesh-Chandak.jpg",
+    quote:
+      "The technical support of Tyche Ventures is very quickly. Makarand solve all the queries instantly, his technical skills are outstanding. He is very responsible person to his work. I would like to recommend him and his company to all.",
+    name: "Dinesh Chandak",
+    company: null,
+    href: null,
+  },
+  {
+    img: "/img/Siddharth-Dharmadhikari.jpg",
+    quote:
+      "Mr. Makarand Mane built our website www.chanakyamandal.org. He is a very efficient person & always delivers on his promises. I would definitely recommend his company to all.",
+    name: "Siddharth Dharmadhikari",
+    company: "Chanakya Manadal",
+    href: "http://chanakyamandal.org/",
+  },
+  {
+    img: "/img/Abdirisak-Mohamed.jpg",
+    quote:
+      "Tyche Ventures work is efficient and effective. Their relational yet professional approach has been so valuable. The advice and expertise they have contributed with the establishment of our company is so valuable and unforgettable, everything is running so good, the design and SEO is outstanding work and I do really appreciate your work, thank you.",
+    name: "Abdirisak Mohamed",
+    company: null,
+    href: null,
+  },
+  {
+    img: "/img/Alexander-Weitnauer.jpg",
+    quote: "Aweseome work! Solves problems quickly and efficiently.",
+    name: "Alexander Weitnauer",
+    company: "MD Ergotopia Portal",
+    href: null,
+  },
+  {
+    img: "/img/Ajay-Domun.jpg",
+    quote:
+      "I run a legal project management and a fine art company based in London and have been using Mak for 7 years now. He is very diligent and prompt. More importantly, I do not experience the risks, uncertainties and unreliability that I have experienced too often when dealing with other Indian companies which lack accountability after taking one's money. He is very reliable and experienced in his field; with him, business is safe and I can vouch for him.",
+    name: "Ajay Domun",
+    company: "MD Magna Carta Ltd and MD Florian Kappe LLP",
+    href: null,
+  },
+  {
+    img: "/img/Carina-Kappe.jpg",
+    quote: "Thank you for your help and your trusted. You die a Great Job !",
+    name: "Carina Kappe",
+    company: "MD Florian Kappe LLP",
+    href: "http://floriankappe.com/",
+  },
+  {
+    img: "/img/Jana-Novak.jpg",
+    quote:
+      "Working with Makarand was always a pleasure. Compared to other developers he is very detail-oriented, friendly, fast and his command of English is good. I can only recommend him for all kinds of web projects!",
+    name: "Jana Novak",
+    company: "Cubio Design",
+    href: "http://cubiodesign.com/about/",
+  },
 ];
+
 
 export const FOOTER_SERVICES = [
   { label: "Website Designing", href: `${SITE}/service/website-designing/` },

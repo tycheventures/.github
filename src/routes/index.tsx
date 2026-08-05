@@ -251,7 +251,7 @@ function Index() {
                   <a
                     href={c.href}
                     target="_blank"
-                    rel="noopener noreferrer"
+                    rel="noopener noreferrer nofollow"
                     title={c.name}
                     className="flex h-32 items-center justify-center rounded-sm border border-border bg-surface px-5 py-4 transition-all duration-[400ms] ease-in-out hover:border-primary hover:shadow-card"
                   >

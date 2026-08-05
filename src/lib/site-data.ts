@@ -117,18 +117,6 @@ export const SERVICES = [
   },
 ];
 
-export const PRODUCTS = [
-  {
-    name: "Team WPGenius",
-    href: "https://wpgenius.in/",
-    text: "Our WordPress arm — custom theme and plugin development, site builds, migrations, speed optimisation and ongoing support and maintenance contracts.",
-  },
-  {
-    name: "FenixHost",
-    href: FENIXHOST,
-    text: "Domain registration, Linux and Windows hosting, dedicated servers and cloud hosting, with managed setup and support for the sites we build.",
-  },
-];
 
 
 

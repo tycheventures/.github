@@ -355,7 +355,7 @@
   .bg-\[\#4078c0\] { background-color: rgb(64, 120, 192); }
   .bg-\[\#21759b\] { background-color: rgb(33, 117, 155); }
   .bg-\[\#e52d27\] { background-color: rgb(229, 45, 39); }
-  .bg-\[rgba\(0\,0\,0\,0\.06\)\] { background-color: rgba(0, 0, 0, 0.06); }
+  .bg-\[rgba\(0\,0\,0\,0\.035\)\] { background-color: rgba(0, 0, 0, 0.035); }
   .bg-accent { background-color: var(--accent); }
   .bg-background { background-color: var(--background); }
   .bg-black\/80 { background-color: rgba(0, 0, 0, 0.8); }

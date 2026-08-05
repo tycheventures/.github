@@ -113,6 +113,9 @@ function Index() {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-quote mt-7"
+                data-ga-event="cta_click"
+                data-ga-section="hero"
+                data-ga-label="Get A Quote"
               >
                 Get A Quote
               </a>
@@ -192,6 +195,9 @@ function Index() {
               target="_blank"
               rel="noopener noreferrer"
               className="btn-quote btn-quote-on-accent shrink-0"
+              data-ga-event="cta_click"
+              data-ga-section="cta_banner"
+              data-ga-label="Get A Quote"
             >
               Get A Quote
             </a>
@@ -230,6 +236,9 @@ function Index() {
             <div className="mt-12 text-center">
               <a
                 href={WPG_WORK}
+                data-ga-event="cta_click"
+                data-ga-section="work"
+                data-ga-label="View All Work"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="inline-block rounded-sm border border-primary px-8 py-3 text-[15px] font-semibold uppercase tracking-wide text-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"

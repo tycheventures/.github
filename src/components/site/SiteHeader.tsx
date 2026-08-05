@@ -103,6 +103,9 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             target="_blank"
             rel="noopener noreferrer"
             className="btn-quote"
+            data-ga-event="cta_click"
+            data-ga-section="header"
+            data-ga-label="Get A Quote"
           >
             Get A Quote
           </a>
@@ -187,6 +190,9 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-quote"
+                data-ga-event="cta_click"
+                data-ga-section="mobile_menu"
+                data-ga-label="Get A Quote"
               >
                 Get A Quote
               </a>

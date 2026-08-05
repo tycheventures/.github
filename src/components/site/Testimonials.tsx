@@ -31,16 +31,17 @@ export function Testimonials() {
         />
 
         <div className="mt-10 w-full bg-[rgba(0,0,0,0.06)] px-6 pb-[10px] pt-[30px] sm:px-10">
-          <blockquote className="testimonial-lines relative text-[17px] font-normal leading-[31px] text-muted-foreground">
+          <blockquote className="testimonial-lines relative indent-[62px] text-[17px] font-medium leading-[31px] text-muted-foreground">
             <span
               aria-hidden="true"
-              className="mr-1 align-[-0.35em] font-display text-[64px] leading-none text-[rgba(0,0,0,0.15)]"
+              className="pointer-events-none absolute left-0 top-[-14px] font-display text-[64px] font-bold leading-none text-[rgba(0,0,0,0.12)]"
             >
               &rdquo;
             </span>
             {item.quote}
           </blockquote>
         </div>
+
 
 
         <div className="mt-6 flex items-center justify-center gap-2" aria-hidden="true">

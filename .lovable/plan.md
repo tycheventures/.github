@@ -80,15 +80,22 @@ Audit every interactive element against the original CSS and restore what is mis
 
 Short and simple, in this order only:
 
-- Company name
+- Company name (with a one-line link to the website)
 - Tagline
 - About us (2–3 sentences)
-- Services offered
-- Products — only these two: **Team WPGenius** (WordPress development and support services) and **FenixHost** (domain, hosting and server solutions)
+- Services offered — each service is a link, all pointing to the site's Services page
+- Products — only these two, each with a fuller 1–2 line description of what it does and who it is for:
+  - **Team WPGenius** — WordPress development, maintenance, speed and security support
+  - **FenixHost** — domains, web hosting and managed server solutions
+
+Every link in the README is written so it opens in a new tab (HTML anchors with `target="_blank" rel="noopener"`, since plain markdown links cannot set a target on GitHub).
 
 Removed: contact details, "Connect with us", and everything else currently in the file.
 
-Suggested extras (say if you want them): a one-line website link under the company name, and the services list kept as plain bullets without per-service links so the file stays clean.
+## External links open in a new tab
+
+Across the rebuilt site (React pages and the exported `docs/` HTML), every link pointing off this static copy — main site sections, product sites, client/project sites, social links — gets `target="_blank" rel="noopener noreferrer"`. Internal links (home ↔ about) stay in the same tab.
+
 
 ## Static export
 

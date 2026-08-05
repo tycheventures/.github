@@ -30,7 +30,7 @@ export function Testimonials() {
           className="h-[115px] w-[115px] shrink-0 rounded-full object-cover shadow-card"
         />
 
-        <div className="mt-10 w-full bg-[rgba(0,0,0,0.035)] px-6 pb-[10px] pt-[30px] sm:px-10">
+        <div className="mt-10 w-full bg-[rgba(0,0,0,0.06)] px-6 pb-[10px] pt-[30px] sm:px-10">
           <blockquote className="testimonial-lines relative text-[17px] font-normal leading-[31px] text-muted-foreground">
             <span
               aria-hidden="true"

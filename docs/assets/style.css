@@ -1098,3 +1098,6 @@
 @media (width >= 40rem) {
   .sm\:columns-2 { columns: 2; }
 }
+
+
+.leading-\[22px\] { line-height: 22px; }

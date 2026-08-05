@@ -59,6 +59,7 @@ function Index() {
                 TYCHE
                 <br />
                 VENTURES
+                <span className="sr-only"> — Website Design &amp; Development Agency</span>
               </h1>
               <p className="mt-4 max-w-md text-[15px] leading-[25px] text-muted-foreground sm:text-base">
                 <TypedTagline text="Building Brands With Passion And Ulterior Motive" />

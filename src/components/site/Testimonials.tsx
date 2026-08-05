@@ -65,9 +65,10 @@ export function Testimonials() {
             )}
           </span>
           {item.company && (
-            <span className="mt-1 block text-[15px] font-normal text-muted-foreground">
+            <span className="mt-1 block text-[15px] font-medium text-muted-foreground">
               {item.company}
             </span>
+
           )}
         </figcaption>
       </figure>

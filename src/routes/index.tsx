@@ -7,7 +7,7 @@ import { SectionTitle } from "@/components/site/SectionTitle";
 import { CountUp } from "@/components/site/CountUp";
 import { Testimonials } from "@/components/site/Testimonials";
 import { TypedTagline } from "@/components/site/TypedTagline";
-import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, SERVICES, SITE } from "@/lib/site-data";
+import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, SERVICES, SITE, SOCIALS } from "@/lib/site-data";
 
 const TITLE = "Tyche Ventures — Website Design & Development Agency";
 const DESC =
@@ -27,8 +27,45 @@ export const Route = createFileRoute("/")({
       { name: "description", content: DESC },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
+      { property: "og:url", content: "/" },
       { property: "og:type", content: "website" },
       { name: "twitter:card", content: "summary_large_image" },
+    ],
+    links: [{ rel: "canonical", href: "/" }],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify({
+          "@context": "https://schema.org",
+          "@type": "ProfessionalService",
+          name: "Tyche Ventures",
+          description: DESC,
+          url: SITE,
+          image: `${SITE}/img/taychi-230x70.png`,
+          areaServed: "Worldwide",
+          address: {
+            "@type": "PostalAddress",
+            addressLocality: "Kolhapur",
+            addressRegion: "Maharashtra",
+            addressCountry: "IN",
+          },
+          sameAs: SOCIALS.map((s) => s.href),
+          hasOfferCatalog: {
+            "@type": "OfferCatalog",
+            name: "Services",
+            itemListElement: SERVICES.map((s) => ({
+              "@type": "Offer",
+              itemOffered: {
+                "@type": "Service",
+                name: s.title,
+                description: s.text,
+                url: s.href,
+                provider: { "@type": "Organization", name: "Tyche Ventures" },
+              },
+            })),
+          },
+        }),
+      },
     ],
   }),
   component: Index,
@@ -59,6 +96,7 @@ function Index() {
                 TYCHE
                 <br />
                 VENTURES
+                <span className="sr-only"> — Website Design &amp; Development Agency</span>
               </h1>
               <p className="mt-4 max-w-md text-[15px] leading-[25px] text-muted-foreground sm:text-base">
                 <TypedTagline text="Building Brands With Passion And Ulterior Motive" />

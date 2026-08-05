@@ -10,6 +10,7 @@ import {
 import { useEffect, type ReactNode } from "react";
 
 import appCss from "../styles.css?url";
+import { SITE, SOCIALS } from "../lib/site-data";
 import { reportLovableError } from "../lib/lovable-error-reporting";
 
 function NotFoundComponent() {
@@ -96,6 +97,28 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
         href: "https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap",
       },
       { rel: "icon", href: "/img/favicon.png", type: "image/png" },
+    ],
+    scripts: [
+      {
+        type: "application/ld+json",
+        children: JSON.stringify([
+          {
+            "@context": "https://schema.org",
+            "@type": "Organization",
+            name: "Tyche Ventures",
+            url: SITE,
+            logo: `${SITE}/img/taychi-230x70.png`,
+            description: "Building brands with passion and ulterior motive.",
+            sameAs: SOCIALS.map((s) => s.href),
+          },
+          {
+            "@context": "https://schema.org",
+            "@type": "WebSite",
+            name: "Tyche Ventures",
+            url: SITE,
+          },
+        ]),
+      },
     ],
   }),
   shellComponent: RootShell,

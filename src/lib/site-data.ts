@@ -157,7 +157,7 @@ export const TESTIMONIALS = [
   {
     img: "/img/georg-mayer-85x85.jpg",
     quote:
-      "Makarand Mane and Tyche Ventures helped us realize our multi-lingual corporate website in WordPress in a matter of weeks. They worked closely with our designer and thus saved us a lot of management bandwidth. The result was exactly what we were looking for. The team was always helpful and available when we needed quick minor adjustments and provided great suggestions on how we could manage the site on our own in the future.",
+      "Makarand Mane and Tyche Ventures helped us realize our multi-lingual corporate website in WordPress in a matter of weeks. They worked closely with our designer and thus saved us a lot of management bandwidth. The result was exactly what we were looking for. The team was always helpful and available when we needed quick minor adjustments and provided great suggestions on how we could manage the site on our own in the future (e.g., how to update and translate content). We would be happy to work with them again and highly recommend them.",
     name: "Georg Meyer",
     company: "Preston Meyer Group",
     href: "https://pmgroup.ch/",

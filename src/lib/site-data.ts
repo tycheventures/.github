@@ -104,24 +104,24 @@ export const SERVICES = [
 ];
 
 export const PROJECTS = [
-  { img: "/img/Luxe-Luck.jpg", title: "Luxe Luck", href: `${SITE}/work/luxe-luck/` },
+  { img: "/img/Luxe-Luck.jpg", title: "Luxe Luck", href: "https://luxeluck.com/" },
   {
     img: "/img/Chanakya-Mandal-Pariwar.jpg",
     title: "Chanakya Mandal Pariwar",
-    href: `${SITE}/work/chanakya-mandal-pariwar/`,
+    href: "http://chanakyamandal.org/",
   },
   {
     img: "/img/Mahendra_Jewellers.jpg",
     title: "Mahendra Jewellers",
-    href: `${SITE}/work/mahendra-jewellers/`,
+    href: "http://mahendrajewellers.com/",
   },
-  { img: "/img/Top-Somali-Jobs.jpg", title: "Top Somali Jobs", href: `${SITE}/work/top-somali-jobs/` },
+  { img: "/img/Top-Somali-Jobs.jpg", title: "Top Somali Jobs", href: "http://topsomalijobs.so/" },
   {
     img: "/img/Dietitian-Sheetal.jpg",
     title: "Dietitian Sheetal",
-    href: `${SITE}/work/dietitian-sheetal/`,
+    href: "https://dietitiansheetal.com/",
   },
-  { img: "/img/Hureo.jpg", title: "Hureo", href: `${SITE}/work/hureo/` },
+  { img: "/img/Hureo.jpg", title: "Hureo", href: "https://hureo.com/" },
 ];
 
 export const COUNTERS = [

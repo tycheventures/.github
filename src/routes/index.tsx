@@ -32,7 +32,7 @@ export const Route = createFileRoute("/")({
     ],
     links: [
       { rel: "canonical", href: `${SITE}/` },
-      { rel: "preload", as: "image", href: "/img/hero-banner.webp", fetchpriority: "high" },
+      { rel: "preload", as: "image", href: "/img/hero-banner.webp" },
     ],
     scripts: [
 

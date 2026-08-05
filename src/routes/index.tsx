@@ -14,12 +14,6 @@ const TITLE = "Tyche Ventures — Website Design & Development Agency";
 const DESC =
   "Tyche Ventures builds websites, e-commerce stores, learning management systems and digital marketing campaigns that turn visitors into customers.";
 
-const HIGHLIGHT_ICONS: Record<string, LucideIcon> = {
-  "thumbs-up": ThumbsUp,
-  rupee: IndianRupee,
-  star: Star,
-  team: Users,
-};
 
 export const Route = createFileRoute("/")({
   head: () => ({

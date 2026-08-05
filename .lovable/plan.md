@@ -1,21 +1,24 @@
 # Fix hero/header alignment and responsive behaviour
 
-## What is wrong today (verified in the running site)
+## What is wrong today (verified in the running site and supplied screenshots)
 
 1. **White gap above the illustration (desktop).** The hero uses the banner as a CSS background sized to the full section width and pinned to the bottom. At 1280px the image is only ~433px tall inside a 700px section, so the top ~267px is plain white and the pale wave never reaches up behind the transparent header. Your screenshot has the wave running all the way to the top edge, behind the menu.
-2. **Illustration covers the headline (mobile, 375px).** At small widths the background switches to `cover` at 65% focus, so the desks and monitor sit directly on top of "Welcome to / TYCHE VENTURES" and the tagline — text is unreadable.
-3. **Dead space under the hero (tablet, 768px).** After the wave ends there is ~90px of empty white before the USP cards, so the hero looks unbalanced.
-4. **Hero text is not vertically aligned with the artwork.** Because the artwork is bottom-anchored and the text block is centred in a taller box, the copy floats above the illustration instead of sitting beside it as in the reference.
-5. **Header/hero handoff.** Header is correctly transparent at rest, but with the current gap it reads as a solid white bar. Header height also jumps (64px mobile / 72px desktop) with no matching hero offset.
+2. **Illustration covers the headline (mobile).** The supplied phone screenshot shows the oversized people, monitors, and PHP blocks crossing through both "TYCHE VENTURES" and the tagline. The crop is too large for the available width and the centred copy has no protected clear area.
+3. **Mobile hero is much too tall.** The phone screenshot extends the artwork to roughly 930px before the first USP card; the source banner is being scaled by height rather than composed for a portrait viewport.
+4. **Tablet crop is oversized and clipped.** The supplied tablet screenshot keeps the text readable, but crops a large monitor off the right edge and gives the artwork much more visual weight than the copy.
+5. **Tablet USP row is too wide.** Four desktop-style cards remain in one row and are visibly cut at the viewport edges instead of adapting to a tablet grid.
+6. **Hero text is not consistently aligned with the artwork.** Desktop is close to the reference, but tablet/mobile use different apparent vertical anchors; phone copy becomes centred while the illustration remains right-weighted.
+7. **Header/hero handoff.** Header is transparent, but the desktop white gap makes it read as a separate white bar. On phone/tablet the logo and menu are correctly over the wave, so that relationship must be preserved while correcting the crop.
 
 ## The fix
 
-**Hero structure** — stop using a single stretched background and build the hero as a proper two-part stage:
+**Hero structure** — keep the supplied 1920×650 banner as one non-repeating layer, but control its scale and crop independently from the content:
 
-- Desktop / large tablet: full-bleed artwork anchored to the **top-right** of the section and starting at y=0 so the pale wave passes behind the transparent header, with the section height derived from the image's aspect ratio (no fixed 700px box, no bottom gap).
-- The text column sits in the left half, vertically centred against the artwork, with top padding equal to the header height so it never tucks under the menu.
-- Tablet (768–1023px): artwork scaled down and shifted right, text column widened; hero height follows the artwork so the empty strip below disappears.
-- Mobile (<768px): artwork moves out from behind the text — a light wave/tinted band stays at the top behind the header, the illustration renders below the headline at reduced size (or is cropped to the empty right portion), so the copy is always on clean background.
+- **Desktop (1024px+):** match the supplied desktop screenshot: logo and navigation over the top of the pale wave, headline left, illustration right, and hero ending immediately after the banner. Use top-right anchoring and a cover/width calculation that fills the header area without creating the current white strip.
+- **Tablet (768–1023px):** match the supplied tablet composition but scale the artwork down enough to keep the full main monitor inside the viewport. Keep headline left-aligned with a protected clear zone and end the hero near the bottom of the wave rather than adding empty whitespace.
+- **Mobile (<768px):** use a deliberate portrait composition rather than `background-size: cover`: retain the pale wave behind the logo/menu, place the headline in a clean left-aligned area, and scale/position the illustration to the right/below without crossing any text. The hero should end around one mobile viewport, not continue for ~930px.
+- Use breakpoint-specific `background-size`/`background-position` (or an absolutely positioned decorative image) with `background-repeat: no-repeat`; do not duplicate, stretch, or distort the source artwork.
+- Keep the existing desktop type scale, reduce heading/tagline sizes and line lengths on tablet/mobile, and never allow the headline to extend underneath the illustration.
 
 **Header**
 
@@ -27,6 +30,7 @@
 - Remove the leftover fixed `min-h` values on the hero that fight the image ratio.
 - Ensure no horizontal scroll at any width from the full-bleed artwork.
 - Re-verify the USP cards start cleanly below the hero at all three widths.
+- Make USP cards 4 columns on desktop, 2 columns on tablet, and 1 column on mobile so none are clipped at the viewport edge.
 
 **Static export**
 
@@ -34,11 +38,11 @@
 
 ## Verification
 
-Screenshots at 375, 768, 1024 and 1280px of both the React preview and the exported `docs/index.html`, checking: wave reaches the top edge behind the header, no white gap, headline legible, no dead space before the USP cards, no horizontal scrollbar.
+Screenshots at 375, 768, 1024 and 1280px of both the React preview and the exported `docs/index.html`, compared against the supplied device screenshots. Check: wave reaches the top edge behind the header, no white gap, headline/tagline remain fully legible, illustration is not duplicated or clipped incoherently, hero height is controlled, USP cards fit their grid, and there is no horizontal scrollbar.
 
 ## Technical notes
 
-- `src/routes/index.tsx`: hero becomes a relative section with an absolutely positioned `<img>`/picture layer (object-fit + object-position per breakpoint) instead of the `.hero-banner` background utility; height driven by aspect ratio with a min-height floor.
+- `src/routes/index.tsx`: hero becomes a relative section with a separately positioned decorative image layer (object-fit + object-position per breakpoint) instead of one generic `cover` rule; responsive height is controlled per device class.
 - `src/styles.css`: drop or repurpose the `.hero-banner` background rule.
 - `src/components/site/SiteHeader.tsx`: normalise header height, no behavioural change to the scroll logic.
 - Export pipeline scripts under `/tmp/browser/tv/` (`export.py`, `post.py`) re-run unchanged apart from any selector updates the new hero markup requires.

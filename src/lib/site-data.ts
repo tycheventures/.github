@@ -20,40 +20,39 @@ type NavItem = { label: string; href: string; internal?: boolean; children?: Nav
 
 export const NAV: NavItem[] = [
   { label: "About", href: "/about", internal: true },
-  { label: "Work", href: `${SITE}/work/` },
+  { label: "Work", href: WPG_WORK },
   {
     label: "Services",
-    href: `${SITE}/services/`,
+    href: WPG_SERVICES,
     children: [
-      { label: "Learning management system", href: `${SITE}/services/learning-management-system/` },
-      { label: "E-commerce development", href: `${SITE}/services/e-commerce-development/` },
-      { label: "Job Portal development", href: `${SITE}/services/job-portal-development/` },
-      { label: "Graphics Design services", href: `${SITE}/services/graphics-design-services/` },
+      { label: "Learning management system", href: WPG_LMS },
+      { label: "E-commerce development", href: WPG_SERVICES },
+      { label: "Job Portal development", href: WPG_SERVICES },
+      { label: "Graphics Design services", href: WPG_SERVICES },
       {
         label: "Website Designing and Development",
-        href: `${SITE}/services/website-designing-and-development/`,
+        href: WPG_DESIGN,
       },
-      { label: "Search Engine Optimization", href: `${SITE}/services/search-engine-optimization/` },
-      { label: "Digital Marketing Services", href: `${SITE}/services/digital-marketing-services/` },
+      { label: "Search Engine Optimization", href: WPG_SERVICES },
+      { label: "Digital Marketing Services", href: WPG_SERVICES },
       {
         label: "Annual Maintenance Contract",
-        href: `${SITE}/services/annual-maintenance-contract/`,
+        href: WPG_MAINTENANCE,
       },
     ],
   },
   {
     label: "Products",
-    href: `${SITE}/services/`,
+    href: "/#products",
+    internal: true,
     children: [
-      { label: "Team WPGenius", href: "http://wpgenius.in/", external: true },
-      { label: "FenixHost", href: "https://shop.fenixhost.in/", external: true },
-      { label: "Plugins marketplace", href: "https://plugins.gallery/", external: true },
-      { label: "Themes Marketplace", href: "https://themes.expert/", external: true },
+      { label: "Team WPGenius", href: "https://wpgenius.in/", external: true },
+      { label: "FenixHost", href: FENIXHOST, external: true },
     ],
   },
-  { label: "Blog", href: `${SITE}/blog/` },
-  { label: "Careers", href: `${SITE}/careers/` },
-  { label: "Contact", href: `${SITE}/contact/` },
+  { label: "Blog", href: WPG_BLOG },
+  { label: "Careers", href: WPG_CAREERS },
+  { label: "Contact", href: WPG_CONTACT },
 ];
 
 export const HIGHLIGHTS = [

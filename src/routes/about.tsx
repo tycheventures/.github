@@ -3,7 +3,7 @@ import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { BackToTop } from "@/components/site/BackToTop";
 import { HighlightCard } from "@/components/site/HighlightCard";
-import { HIGHLIGHTS } from "@/lib/site-data";
+import { HIGHLIGHTS, OG_IMAGE, SITE } from "@/lib/site-data";
 
 const TITLE = "About Tyche Ventures — Kolhapur Web Design Agency";
 const DESC =
@@ -14,12 +14,18 @@ export const Route = createFileRoute("/about")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
+      { name: "robots", content: "index,follow" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
+      { property: "og:url", content: `${SITE}/about/` },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
+    links: [{ rel: "canonical", href: `${SITE}/about/` }],
   }),
+
   component: About,
 });
 
@@ -36,7 +42,7 @@ function About() {
     <div className="min-h-screen bg-background">
       <SiteHeader />
 
-      <main className="pt-[68px] md:pt-[76px]">
+      <main id="main" className="pt-[68px] md:pt-[76px]">
         <section className="bg-surface py-14 md:py-20">
           <div className="container-tyche text-center">
             <h1 className="font-display text-4xl font-semibold tracking-[0.08em] text-heading md:text-5xl">

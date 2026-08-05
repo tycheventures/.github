@@ -8,7 +8,7 @@ import { CountUp } from "@/components/site/CountUp";
 import { HighlightCard } from "@/components/site/HighlightCard";
 import { Testimonials } from "@/components/site/Testimonials";
 import { TypedTagline } from "@/components/site/TypedTagline";
-import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, QUOTE_URL, SERVICES, SITE, SOCIALS, WPG_WORK } from "@/lib/site-data";
+import { CLIENTS, COUNTERS, HIGHLIGHTS, OG_IMAGE, PRODUCTS, PROJECTS, QUOTE_URL, SERVICES, SITE, SOCIALS, WPG_WORK } from "@/lib/site-data";
 
 
 const TITLE = "Tyche Ventures — Website Design & Development Agency";
@@ -21,14 +21,21 @@ export const Route = createFileRoute("/")({
     meta: [
       { title: TITLE },
       { name: "description", content: DESC },
+      { name: "robots", content: "index,follow" },
       { property: "og:title", content: TITLE },
       { property: "og:description", content: DESC },
-      { property: "og:url", content: "/" },
+      { property: "og:url", content: `${SITE}/` },
       { property: "og:type", content: "website" },
+      { property: "og:image", content: OG_IMAGE },
       { name: "twitter:card", content: "summary_large_image" },
+      { name: "twitter:image", content: OG_IMAGE },
     ],
-    links: [{ rel: "canonical", href: "/" }],
+    links: [
+      { rel: "canonical", href: `${SITE}/` },
+      { rel: "preload", as: "image", href: "/img/hero-banner.webp" },
+    ],
     scripts: [
+
       {
         type: "application/ld+json",
         children: JSON.stringify({
@@ -72,18 +79,20 @@ function Index() {
     <div className="min-h-screen bg-background">
       <SiteHeader transparent />
 
-      <main>
+      <main id="main">
         {/* Hero */}
         <section className="relative overflow-hidden bg-gradient-to-b from-wave via-wave-soft to-background lg:bg-none">
           {/* desktop / large: full-bleed artwork behind the transparent header */}
           <img
-            src="/img/hero-banner.png"
+            src="/img/hero-banner.webp"
             alt=""
             aria-hidden="true"
             width={1920}
             height={650}
+            fetchPriority="high"
             className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-bottom lg:block"
           />
+
 
           <div className="relative z-10 container-tyche flex flex-col pb-10 pt-28 md:pt-32 lg:grid lg:min-h-[560px] lg:grid-cols-2 lg:items-center lg:gap-10 lg:pb-24 lg:pt-40">
             <div>
@@ -111,11 +120,12 @@ function Index() {
 
           {/* tablet / mobile: artwork sits below the copy so nothing overlaps the headline */}
           <img
-            src="/img/hero-banner.png"
+            src="/img/hero-banner-mobile.webp"
             alt=""
             aria-hidden="true"
-            width={1920}
-            height={650}
+            width={900}
+            height={600}
+            fetchPriority="high"
             className="relative z-0 block h-[240px] w-full object-cover object-[72%_bottom] sm:h-[320px] md:h-[380px] md:object-[78%_bottom] lg:hidden"
           />
         </section>
@@ -128,6 +138,32 @@ function Index() {
             ))}
           </div>
         </section>
+
+        {/* Products */}
+        <section id="products" className="scroll-mt-24 bg-wave-soft py-16 md:py-20">
+          <div className="container-tyche">
+            <SectionTitle icon={Settings}>Our Products</SectionTitle>
+            <div className="mt-10 grid gap-6 md:grid-cols-2">
+              {PRODUCTS.map((p) => (
+                <a
+                  key={p.name}
+                  href={p.href}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block rounded-sm bg-background p-7 shadow-card transition-shadow duration-300 hover:shadow-card-hover"
+                >
+                  <h3 className="font-display text-[18px] font-bold text-title">{p.name}</h3>
+                  <p className="mt-3 text-[15px] leading-[26px] text-muted-foreground">{p.text}</p>
+                  <span className="mt-4 inline-block text-[14px] font-semibold uppercase tracking-wide text-primary">
+                    Visit site
+                  </span>
+                </a>
+              ))}
+            </div>
+          </div>
+        </section>
+
+
 
 
 

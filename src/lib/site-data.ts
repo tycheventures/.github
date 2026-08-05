@@ -1,4 +1,6 @@
 export const SITE = "https://tycheventures.com";
+export const OG_IMAGE = `${SITE}/img/og-cover.jpg`;
+
 
 /** Legacy Tyche Ventures pages now live on WPGenius. */
 export const WPG = "https://wpgenius.in";
@@ -16,10 +18,17 @@ export const WPG_MAINTENANCE = `${WPG}/services/wordpress-support-maintenance/`;
 export const FENIXHOST = "https://shop.fenixhost.in/";
 
 type NavChild = { label: string; href: string; external?: boolean };
-type NavItem = { label: string; href: string; internal?: boolean; children?: NavChild[] };
+type NavItem = {
+  label: string;
+  href: string;
+  internal?: boolean;
+  anchor?: boolean;
+  children?: NavChild[];
+};
 
 export const NAV: NavItem[] = [
   { label: "About", href: "/about", internal: true },
+
   { label: "Work", href: WPG_WORK },
   {
     label: "Services",
@@ -43,9 +52,10 @@ export const NAV: NavItem[] = [
   },
   {
     label: "Products",
-    href: "/",
-    internal: true,
+    href: "#products",
+    anchor: true,
     children: [
+
       { label: "Team WPGenius", href: "https://wpgenius.in/", external: true },
       { label: "FenixHost", href: FENIXHOST, external: true },
     ],
@@ -116,6 +126,21 @@ export const SERVICES = [
     href: WPG_SERVICES,
   },
 ];
+
+export const PRODUCTS = [
+  {
+    name: "Team WPGenius",
+    href: "https://wpgenius.in/",
+    text: "Our WordPress arm — custom theme and plugin development, site builds, migrations, speed optimisation and ongoing support and maintenance contracts.",
+  },
+  {
+    name: "FenixHost",
+    href: FENIXHOST,
+    text: "Domain registration, Linux and Windows hosting, dedicated servers and cloud hosting, with managed setup and support for the sites we build.",
+  },
+];
+
+
 
 export const PROJECTS = [
   { img: "/img/Luxe-Luck.jpg", title: "Luxe Luck", href: "https://luxeluck.com/" },

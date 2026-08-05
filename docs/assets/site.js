@@ -67,6 +67,7 @@ document.addEventListener('DOMContentLoaded', function () {
           if (p < 1) requestAnimationFrame(step);
         };
         requestAnimationFrame(step);
+        setTimeout(function () { el.textContent = target + suffix; }, dur + 50);
       });
     }, { threshold: 0.4 });
     counters.forEach(function (c) { io.observe(c); });

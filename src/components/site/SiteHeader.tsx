@@ -87,14 +87,6 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
               </a>
             );
           })}
-          <a
-            href={`${SITE}/get-a-quote/`}
-            target="_blank"
-            rel="noopener noreferrer"
-            className="btn-quote"
-          >
-            Get A Quote
-          </a>
         </nav>
 
         <button

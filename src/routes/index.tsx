@@ -117,23 +117,14 @@ function Index() {
         </section>
 
         {/* Highlights */}
-        <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">
+        <section className="container-tyche py-16 md:py-20">
           <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
-            {HIGHLIGHTS.map((h) => {
-              const Icon = HIGHLIGHT_ICONS[h.icon] ?? Star;
-              return (
-                <article
-                  key={h.title}
-                  className="flex flex-col items-center rounded-sm bg-card px-6 py-9 text-center shadow-card transition-shadow duration-300 hover:shadow-card-hover"
-                >
-                  <Icon className="h-9 w-9 text-primary" aria-hidden="true" strokeWidth={1.5} />
-                  <h2 className="mt-5 text-2xl font-bold leading-8 text-heading">{h.title}</h2>
-                  <p className="mt-4 text-sm leading-6 text-muted-foreground">{h.text}</p>
-                </article>
-              );
-            })}
+            {HIGHLIGHTS.map((h) => (
+              <HighlightCard key={h.title} icon={h.icon} title={h.title} text={h.text} as="h2" />
+            ))}
           </div>
         </section>
+
 
 
 

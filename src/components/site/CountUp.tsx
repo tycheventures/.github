@@ -32,7 +32,7 @@ export function CountUp({ value, suffix }: { value: number; suffix: string }) {
 
   return (
     <div ref={ref} className="text-center">
-      <div className="font-display text-4xl font-semibold text-primary-foreground md:text-5xl">
+      <div data-count={value} data-suffix={suffix} className="font-display text-[40px] font-bold leading-none text-primary-foreground md:text-[48px]">
         {n}
         {suffix}
       </div>

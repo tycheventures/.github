@@ -4,7 +4,7 @@ import { useEffect, useState } from "react";
 import { NAV, SITE } from "@/lib/site-data";
 
 const linkCls =
-  "text-[13px] font-semibold uppercase tracking-wide text-card-foreground transition-colors hover:text-primary";
+  "text-[14px] font-semibold uppercase tracking-wide text-title transition-colors duration-300 hover:text-primary";
 
 export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
   const [open, setOpen] = useState(false);
@@ -44,7 +44,12 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             if (item.children) {
               return (
                 <div key={item.label} className="group relative">
-                  <a href={item.href} className={`${linkCls} inline-flex items-center gap-1`}>
+                  <a
+                    href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className={`${linkCls} inline-flex items-center gap-1`}
+                  >
                     {item.label}
                     <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
                   </a>
@@ -54,10 +59,9 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                         <li key={c.label}>
                           <a
                             href={c.href}
-                            {...(c.external
-                              ? { target: "_blank", rel: "noopener nofollow noreferrer" }
-                              : {})}
-                            className="block px-5 py-2 text-[13px] text-muted-foreground transition-colors hover:text-primary"
+                            target="_blank"
+                            rel="noopener noreferrer"
+                            className="block px-5 py-2 text-[14px] text-muted-foreground transition-colors duration-300 hover:text-primary"
                           >
                             {c.label}
                           </a>
@@ -78,14 +82,16 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                 {item.label}
               </Link>
             ) : (
-              <a key={item.label} href={item.href} className={linkCls}>
+              <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={linkCls}>
                 {item.label}
               </a>
             );
           })}
           <a
             href={`${SITE}/get-a-quote/`}
-            className="rounded-sm bg-primary px-5 py-2.5 text-[13px] font-semibold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-accent"
+            target="_blank"
+            rel="noopener noreferrer"
+            className="rounded-sm bg-primary px-5 py-2.5 text-[14px] font-semibold uppercase tracking-wide text-primary-foreground transition-colors hover:bg-accent"
           >
             Get A Quote
           </a>
@@ -131,9 +137,9 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                           <li key={c.label}>
                             <a
                               href={c.href}
-                              {...(c.external
-                                ? { target: "_blank", rel: "noopener nofollow noreferrer" }
-                                : {})}
+                              target="_blank"
+                              rel="noopener noreferrer"
+
                               className="block py-2 text-sm text-muted-foreground"
                             >
                               {c.label}
@@ -154,6 +160,8 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                 ) : (
                   <a
                     href={item.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
                     className="block py-3 text-sm font-semibold uppercase tracking-wide text-card-foreground"
                   >
                     {item.label}
@@ -164,6 +172,8 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             <li className="py-3">
               <a
                 href={`${SITE}/get-a-quote/`}
+                target="_blank"
+                rel="noopener noreferrer"
                 className="inline-block rounded-sm bg-primary px-5 py-2.5 text-sm font-semibold uppercase tracking-wide text-primary-foreground"
               >
                 Get A Quote

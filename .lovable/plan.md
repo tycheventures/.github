@@ -34,7 +34,7 @@
 
 ## Pull the real CSS from the original site
 
-Yes — instead of re-guessing values, the original stylesheets (live site + Wayback snapshot) will be fetched and read, and the actual declarations copied across for the sections below: font sizes, line heights, letter spacing, box-shadow values, transition timings, and hover states. Anything the original defines becomes the source of truth; only genuinely broken rules get corrected.
+Source of truth: the Wayback snapshot `https://web.archive.org/web/20211222050527/https://tycheventures.com/` and its linked stylesheets. Those files will be fetched and read, and the actual declarations copied across for the sections below: font sizes, line heights, letter spacing, box-shadow values, transition timings, and hover states. Typography stays Montserrat throughout (already loaded). Anything the original defines becomes the source of truth; only genuinely broken rules get corrected.
 
 ## USP / highlights cards
 

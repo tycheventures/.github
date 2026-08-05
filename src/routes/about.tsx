@@ -81,15 +81,10 @@ function About() {
             <h2 className="section-title text-center text-3xl uppercase md:text-4xl">Why Choose Us?</h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {HIGHLIGHTS.map((h) => (
-                <article
-                  key={h.title}
-                  className="rounded-md border border-border bg-card p-7 text-center shadow-card"
-                >
-                  <h3 className="text-base font-semibold leading-snug">{h.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{h.text}</p>
-                </article>
+                <HighlightCard key={h.title} icon={h.icon} title={h.title} text={h.text} />
               ))}
             </div>
+
           </div>
         </section>
       </main>

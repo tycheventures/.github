@@ -212,15 +212,7 @@
 }
 
 @utility btn-quote-on-accent {
-  background-color: transparent;
-  border: 1px solid #ffffff;
-  border-radius: 4px;
-  padding: 9px 18px;
-  font-size: 14px;
-  font-weight: 500;
-  text-transform: none;
-  letter-spacing: 0;
-  color: #ffffff;
+  border-color: #ffffff;
 
   &:hover {
     background-color: #ffffff;

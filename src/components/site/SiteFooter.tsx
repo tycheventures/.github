@@ -34,7 +34,7 @@ const SOCIAL_COLORS: Record<string, string> = {
 export function SiteFooter() {
   return (
     <footer className="bg-footer text-footer-muted">
-      <div className="mx-auto grid max-w-6xl gap-12 px-5 py-16 md:grid-cols-2 lg:grid-cols-4">
+      <div className="container-tyche grid gap-12 py-16 md:grid-cols-2 lg:grid-cols-4">
         <div>
           <Link to="/" aria-label="Tyche Ventures home">
             <img
@@ -99,7 +99,7 @@ export function SiteFooter() {
       </div>
 
       <div className="border-t border-white/10">
-        <div className="mx-auto flex max-w-6xl flex-col items-center gap-4 px-5 py-6 text-center md:flex-row md:justify-between md:text-left">
+        <div className="container-tyche flex flex-col items-center gap-4 px-5 py-6 text-center md:flex-row md:justify-between md:text-left">
           <p className="text-base font-normal leading-6 text-footer-muted">
             &copy; {new Date().getFullYear()} Tyche Ventures. All Rights Reserved.
           </p>

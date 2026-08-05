@@ -84,7 +84,7 @@ function Index() {
             className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-bottom lg:block"
           />
 
-          <div className="relative z-10 mx-auto flex max-w-6xl flex-col px-5 pb-10 pt-28 md:pt-32 lg:grid lg:min-h-[560px] lg:grid-cols-2 lg:items-center lg:gap-10 lg:pb-24 lg:pt-40">
+          <div className="relative z-10 container-tyche flex flex-col pb-10 pt-28 md:pt-32 lg:grid lg:min-h-[560px] lg:grid-cols-2 lg:items-center lg:gap-10 lg:pb-24 lg:pt-40">
             <div>
               <p className="font-display text-xl font-medium text-title sm:text-2xl">Welcome to</p>
               <h1 className="mt-2 font-display text-[38px] font-bold leading-[1.06] tracking-[3px] text-title sm:text-5xl lg:text-[60px] lg:leading-[64px] lg:tracking-[4px]">
@@ -125,7 +125,7 @@ function Index() {
 
         {/* Services */}
         <section className="pb-16 md:pb-20">
-          <div className="mx-auto max-w-6xl px-5">
+          <div className="container-tyche">
             <SectionTitle icon={Settings}>Services</SectionTitle>
             <div className="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
               {SERVICES.map((s) => (
@@ -159,7 +159,7 @@ function Index() {
 
         {/* Purple CTA band */}
         <section className="bg-accent">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-10 text-center md:flex-row md:justify-between md:text-left">
+          <div className="container-tyche flex flex-col items-center gap-5 px-5 py-10 text-center md:flex-row md:justify-between md:text-left">
             <p className="text-2xl font-medium leading-[34px] text-accent-foreground">
               Talk to our experts today and get professional design, and development services.
             </p>
@@ -176,7 +176,7 @@ function Index() {
 
         {/* Featured projects */}
         <section className="py-16 md:py-20">
-          <div className="mx-auto max-w-6xl px-5">
+          <div className="container-tyche">
             <SectionTitle icon={Monitor}>Featured Projects</SectionTitle>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">
               {PROJECTS.map((p) => (
@@ -220,7 +220,7 @@ function Index() {
         <section className="counter-bg relative bg-heading bg-cover bg-center bg-no-repeat py-20">
           <div className="absolute inset-0 bg-heading/75" aria-hidden="true" />
 
-          <div className="relative mx-auto grid max-w-6xl gap-10 px-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="container-tyche relative grid gap-10 sm:grid-cols-2 lg:grid-cols-4">
             {COUNTERS.map((c) => (
               <div key={c.label}>
                 <CountUp value={c.value} suffix={c.suffix} />
@@ -234,7 +234,7 @@ function Index() {
 
         {/* Clients */}
         <section className="py-16 md:py-20">
-          <div className="mx-auto max-w-6xl px-5">
+          <div className="container-tyche">
             <SectionTitle icon={Users}>Who Trusted Us</SectionTitle>
             <ul className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
               {CLIENTS.map((c) => (
@@ -262,7 +262,7 @@ function Index() {
 
         {/* Testimonials */}
         <section className="bg-surface py-16 md:py-20">
-          <div className="mx-auto max-w-6xl px-5">
+          <div className="container-tyche">
             <SectionTitle icon={Users}>Our Client Says</SectionTitle>
             <Testimonials />
           </div>

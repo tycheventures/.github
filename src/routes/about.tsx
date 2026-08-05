@@ -36,7 +36,7 @@ function About() {
 
       <main className="pt-[68px] md:pt-[76px]">
         <section className="bg-surface py-14 md:py-20">
-          <div className="mx-auto max-w-6xl px-5 text-center">
+          <div className="container-tyche text-center">
             <h1 className="font-display text-4xl font-semibold tracking-[0.08em] text-heading md:text-5xl">
               About Tyche Ventures
             </h1>
@@ -77,7 +77,7 @@ function About() {
         </section>
 
         <section className="bg-surface py-16 md:py-20">
-          <div className="mx-auto max-w-6xl px-5">
+          <div className="container-tyche">
             <h2 className="section-title text-center text-3xl uppercase md:text-4xl">Why Choose Us?</h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {HIGHLIGHTS.map((h) => (

@@ -43,7 +43,7 @@ export const NAV: NavItem[] = [
   },
   {
     label: "Products",
-    href: "/#products",
+    href: "/",
     internal: true,
     children: [
       { label: "Team WPGenius", href: "https://wpgenius.in/", external: true },

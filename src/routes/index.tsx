@@ -7,7 +7,7 @@ import { SectionTitle } from "@/components/site/SectionTitle";
 import { CountUp } from "@/components/site/CountUp";
 import { Testimonials } from "@/components/site/Testimonials";
 import { TypedTagline } from "@/components/site/TypedTagline";
-import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, SERVICES, SITE } from "@/lib/site-data";
+import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, SERVICES, SITE, SOCIALS } from "@/lib/site-data";
 
 const TITLE = "Tyche Ventures — Website Design & Development Agency";
 const DESC =

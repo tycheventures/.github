@@ -26,7 +26,16 @@
           "type": "object",
           "properties": {}
         },
-        "outputSchema": null
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "overview": {}
+          },
+          "required": [
+            "overview"
+          ]
+        }
       },
       {
         "name": "list_services",
@@ -47,7 +56,16 @@
             }
           }
         },
-        "outputSchema": null
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "result": {}
+          },
+          "required": [
+            "result"
+          ]
+        }
       },
       {
         "name": "list_portfolio",
@@ -63,7 +81,16 @@
           "type": "object",
           "properties": {}
         },
-        "outputSchema": null
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "result": {}
+          },
+          "required": [
+            "result"
+          ]
+        }
       },
       {
         "name": "list_testimonials",
@@ -86,7 +113,16 @@
             }
           }
         },
-        "outputSchema": null
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "testimonials": {}
+          },
+          "required": [
+            "testimonials"
+          ]
+        }
       }
     ]
   }

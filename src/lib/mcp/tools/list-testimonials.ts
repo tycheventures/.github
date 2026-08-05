@@ -9,6 +9,7 @@ export default defineTool({
   inputSchema: {
     limit: z.number().int().optional().describe("Maximum number of testimonials to return."),
   },
+  outputSchema: { testimonials: z.any() },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: ({ limit }) => {
     const max = limit && limit > 0 ? Math.min(limit, TESTIMONIALS.length) : TESTIMONIALS.length;

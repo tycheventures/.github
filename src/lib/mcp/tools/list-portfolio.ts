@@ -1,4 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
+import { z } from "zod";
 import { CLIENTS, PROJECTS, SITE } from "../../site-data";
 
 export default defineTool({
@@ -7,6 +8,7 @@ export default defineTool({
   description:
     "List Tyche Ventures portfolio projects and client brands, each with its case-study or website URL.",
   inputSchema: {},
+  outputSchema: { result: z.any() },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const payload = {
@@ -16,7 +18,7 @@ export default defineTool({
     };
     return {
       content: [{ type: "text", text: JSON.stringify(payload, null, 2) }],
-      structuredContent: payload,
+      structuredContent: { result: payload },
     };
   },
 });

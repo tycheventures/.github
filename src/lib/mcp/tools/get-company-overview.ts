@@ -1,4 +1,5 @@
 import { defineTool } from "@lovable.dev/mcp-js";
+import { z } from "zod";
 import { COUNTERS, FOOTER_LINKS, SITE, SOCIALS } from "../../site-data";
 
 const OVERVIEW = {
@@ -29,6 +30,7 @@ export default defineTool({
   description:
     "Get an overview of Tyche Ventures: tagline, summary, products, headline statistics, key page links and social profiles.",
   inputSchema: {},
+  outputSchema: { overview: z.any() },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: () => {
     const payload = {
@@ -42,7 +44,7 @@ export default defineTool({
     };
     return {
       content: [{ type: "text", text: JSON.stringify(payload, null, 2) }],
-      structuredContent: payload,
+      structuredContent: { overview: payload },
     };
   },
 });

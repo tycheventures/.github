@@ -13,6 +13,7 @@ export default defineTool({
       .optional()
       .describe("Optional keyword to filter services by title or description, e.g. 'seo'."),
   },
+  outputSchema: { result: z.any() },
   annotations: { readOnlyHint: true, idempotentHint: true, openWorldHint: false },
   handler: ({ query }) => {
     const q = query?.trim().toLowerCase();
@@ -26,7 +27,7 @@ export default defineTool({
     };
     return {
       content: [{ type: "text", text: JSON.stringify(payload, null, 2) }],
-      structuredContent: payload,
+      structuredContent: { result: payload },
     };
   },
 });

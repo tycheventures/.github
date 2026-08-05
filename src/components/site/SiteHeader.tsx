@@ -1,7 +1,7 @@
 import { Link } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
-import { NAV, SITE } from "@/lib/site-data";
+import { NAV, QUOTE_URL } from "@/lib/site-data";
 
 const linkCls =
   "text-[14px] font-semibold uppercase tracking-wide text-title transition-colors duration-300 hover:text-primary";
@@ -88,7 +88,7 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             );
           })}
           <a
-            href={`${SITE}/get-a-quote/`}
+            href={QUOTE_URL}
             target="_blank"
             rel="noopener noreferrer"
             className="btn-quote"
@@ -171,7 +171,7 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
             ))}
             <li className="py-3">
               <a
-                href={`${SITE}/get-a-quote/`}
+                href={QUOTE_URL}
                 target="_blank"
                 rel="noopener noreferrer"
                 className="btn-quote"

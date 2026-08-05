@@ -1,44 +1,58 @@
 export const SITE = "https://tycheventures.com";
 
+/** Legacy Tyche Ventures pages now live on WPGenius. */
+export const WPG = "https://wpgenius.in";
+export const WPG_SERVICES = `${WPG}/services/`;
+export const WPG_WORK = `${WPG}/work/`;
+export const WPG_BLOG = `${WPG}/blog/`;
+export const WPG_CAREERS = `${WPG}/careers/`;
+export const WPG_CONTACT = `${WPG}/contact/`;
+export const WPG_PRIVACY = `${WPG}/privacy-policy/`;
+export const QUOTE_URL = WPG_CONTACT;
+export const WPG_DESIGN = `${WPG}/services/wordpress-design-development-customization/`;
+export const WPG_THEME = `${WPG}/services/wordpress-custom-theme-devlopment/`;
+export const WPG_LMS = `${WPG}/services/wordpress-learning-management-systems/`;
+export const WPG_MAINTENANCE = `${WPG}/services/wordpress-support-maintenance/`;
+export const FENIXHOST = "https://shop.fenixhost.in/";
+
 type NavChild = { label: string; href: string; external?: boolean };
 type NavItem = { label: string; href: string; internal?: boolean; children?: NavChild[] };
 
 export const NAV: NavItem[] = [
   { label: "About", href: "/about", internal: true },
-  { label: "Work", href: `${SITE}/work/` },
+  { label: "Work", href: WPG_WORK },
   {
     label: "Services",
-    href: `${SITE}/services/`,
+    href: WPG_SERVICES,
     children: [
-      { label: "Learning management system", href: `${SITE}/services/learning-management-system/` },
-      { label: "E-commerce development", href: `${SITE}/services/e-commerce-development/` },
-      { label: "Job Portal development", href: `${SITE}/services/job-portal-development/` },
-      { label: "Graphics Design services", href: `${SITE}/services/graphics-design-services/` },
+      { label: "Learning management system", href: WPG_LMS },
+      { label: "E-commerce development", href: WPG_SERVICES },
+      { label: "Job Portal development", href: WPG_SERVICES },
+      { label: "Graphics Design services", href: WPG_SERVICES },
       {
         label: "Website Designing and Development",
-        href: `${SITE}/services/website-designing-and-development/`,
+        href: WPG_DESIGN,
       },
-      { label: "Search Engine Optimization", href: `${SITE}/services/search-engine-optimization/` },
-      { label: "Digital Marketing Services", href: `${SITE}/services/digital-marketing-services/` },
+      { label: "Search Engine Optimization", href: WPG_SERVICES },
+      { label: "Digital Marketing Services", href: WPG_SERVICES },
       {
         label: "Annual Maintenance Contract",
-        href: `${SITE}/services/annual-maintenance-contract/`,
+        href: WPG_MAINTENANCE,
       },
     ],
   },
   {
     label: "Products",
-    href: `${SITE}/services/`,
+    href: "/",
+    internal: true,
     children: [
-      { label: "Team WPGenius", href: "http://wpgenius.in/", external: true },
-      { label: "FenixHost", href: "https://shop.fenixhost.in/", external: true },
-      { label: "Plugins marketplace", href: "https://plugins.gallery/", external: true },
-      { label: "Themes Marketplace", href: "https://themes.expert/", external: true },
+      { label: "Team WPGenius", href: "https://wpgenius.in/", external: true },
+      { label: "FenixHost", href: FENIXHOST, external: true },
     ],
   },
-  { label: "Blog", href: `${SITE}/blog/` },
-  { label: "Careers", href: `${SITE}/careers/` },
-  { label: "Contact", href: `${SITE}/contact/` },
+  { label: "Blog", href: WPG_BLOG },
+  { label: "Careers", href: WPG_CAREERS },
+  { label: "Contact", href: WPG_CONTACT },
 ];
 
 export const HIGHLIGHTS = [
@@ -69,37 +83,37 @@ export const SERVICES = [
     icon: "/img/Website-Design-1.png",
     title: "Website Designing and Development",
     text: "Are you looking for website designing services? Don't worry! Tyche Ventures offers you the best in class website design and development at affordable price. The right website will influence the user to take action.",
-    href: `${SITE}/services/website-designing-and-development/`,
+    href: WPG_DESIGN,
   },
   {
     icon: "/img/Lerning-Management-System.png",
     title: "Learning Management System",
     text: "Get a seamless learning experience with our fully customized LMS to fulfill your organization's learning needs. Tyche Ventures is a leading Learning management system provider for various educational institutes.",
-    href: `${SITE}/services/learning-management-system/`,
+    href: WPG_LMS,
   },
   {
     icon: "/img/E-commerce-new.png",
     title: "E-Commerce Development",
     text: "Want to grow your business online? Tyche Ventures provide you exclusive, customized online shopping website to attract many customers. We offer top-notch E-commerce development services with a user-friendly experience.",
-    href: `${SITE}/services/e-commerce-development/`,
+    href: WPG_SERVICES,
   },
   {
     icon: "/img/sutcase.png",
     title: "Job Portal Development",
     text: "Are you searching for a ready to use recruitment website for your brand name? Tyche Ventures develops an easy and user-friendly job portal for recruiters and job seekers. We offer a complete end to end job portal with an advanced search facility.",
-    href: `${SITE}/services/job-portal-development/`,
+    href: WPG_SERVICES,
   },
   {
     icon: "/img/SEO.png",
     title: "Search Engine Optimization",
     text: "Tyche Ventures helps you to grow your brand digitally. Our unique strategies and experienced team offer the best SEO services to stand out in this competitive world. We provide result-driven Search engine optimization services.",
-    href: `${SITE}/services/search-engine-optimization/`,
+    href: WPG_SERVICES,
   },
   {
     icon: "/img/digital-marketing.png",
     title: "Digital Marketing Services",
     text: "Call us now to get the best Digital Marketing solutions. Tyche Ventures boosts your digital presence in the market with advanced SMM, SEO, Content Marketing services. We believe in creativity, analytics, and performance in digital marketing.",
-    href: `${SITE}/services/digital-marketing-services/`,
+    href: WPG_SERVICES,
   },
 ];
 
@@ -267,23 +281,23 @@ export const TESTIMONIALS = [
 
 
 export const FOOTER_SERVICES = [
-  { label: "Website Designing", href: `${SITE}/service/website-designing/` },
-  { label: "Dynamic Website Development", href: `${SITE}/service/dynamic-website-development/` },
-  { label: "Domain and Hosting", href: `${SITE}/service/domain-and-hosting/` },
-  { label: "Graphics Design", href: `${SITE}/service/graphics-design/` },
-  { label: "SEO", href: `${SITE}/service/seo/` },
-  { label: "Digital Marketing", href: `${SITE}/service/digital-marketing/` },
-  { label: "Annual Maintenance Contract", href: `${SITE}/services/annual-maintenance-contract/` },
+  { label: "Website Designing", href: WPG_DESIGN },
+  { label: "Dynamic Website Development", href: WPG_THEME },
+  { label: "Domain and Hosting", href: FENIXHOST },
+  { label: "Graphics Design", href: WPG_SERVICES },
+  { label: "SEO", href: WPG_SERVICES },
+  { label: "Digital Marketing", href: WPG_SERVICES },
+  { label: "Annual Maintenance Contract", href: WPG_MAINTENANCE },
 ];
 
 export const FOOTER_LINKS = [
   { label: "About", href: "/about", internal: true },
-  { label: "Portfolio", href: `${SITE}/work/` },
-  { label: "Services", href: `${SITE}/services/` },
-  { label: "Blog", href: `${SITE}/blog/` },
-  { label: "We Are Hiring", href: `${SITE}/careers/` },
-  { label: "Privacy Policy", href: `${SITE}/privacy-policy/` },
-  { label: "Contact", href: `${SITE}/contact/` },
+  { label: "Portfolio", href: WPG_WORK },
+  { label: "Services", href: WPG_SERVICES },
+  { label: "Blog", href: WPG_BLOG },
+  { label: "We Are Hiring", href: WPG_CAREERS },
+  { label: "Privacy Policy", href: WPG_PRIVACY },
+  { label: "Contact", href: WPG_CONTACT },
 ];
 
 export const SOCIALS = [

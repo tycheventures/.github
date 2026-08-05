@@ -6,6 +6,7 @@ import {
   Twitter,
   Youtube,
   MessageCircle,
+  MessageSquare,
   Globe,
   ChevronRight,
 } from "lucide-react";
@@ -13,6 +14,7 @@ import { FOOTER_LINKS, FOOTER_SERVICES, SOCIALS } from "@/lib/site-data";
 
 const ICONS: Record<string, typeof Facebook> = {
   WhatsApp: MessageCircle,
+  Skype: MessageSquare,
   LinkedIn: Linkedin,
   Facebook: Facebook,
   Twitter: Twitter,
@@ -23,6 +25,7 @@ const ICONS: Record<string, typeof Facebook> = {
 
 const SOCIAL_COLORS: Record<string, string> = {
   WhatsApp: "bg-[#25d366]",
+  Skype: "bg-[#00aff0]",
   LinkedIn: "bg-[#0077b5]",
   Facebook: "bg-[#3b5998]",
   Twitter: "bg-[#1da1f2]",

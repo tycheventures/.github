@@ -50,16 +50,6 @@ export const NAV: NavItem[] = [
       },
     ],
   },
-  {
-    label: "Products",
-    href: "#products",
-    anchor: true,
-    children: [
-
-      { label: "Team WPGenius", href: "https://wpgenius.in/", external: true },
-      { label: "FenixHost", href: FENIXHOST, external: true },
-    ],
-  },
   { label: "Blog", href: WPG_BLOG },
   { label: "Careers", href: WPG_CAREERS },
   { label: "Contact", href: WPG_CONTACT },

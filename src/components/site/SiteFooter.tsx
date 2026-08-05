@@ -8,7 +8,7 @@ import {
   MessageCircle,
   MessageSquare,
   Globe,
-  ChevronRight,
+  TriangleRight,
 } from "lucide-react";
 import { FOOTER_LINKS, FOOTER_SERVICES, SOCIALS } from "@/lib/site-data";
 
@@ -56,17 +56,17 @@ export function SiteFooter() {
 
         <div className="lg:col-span-2">
           <h3 className="text-2xl font-normal leading-8 text-footer-foreground">Services</h3>
-          <ul className="mt-6 grid gap-4 sm:grid-cols-2">
+          <ul className="mt-6 sm:columns-2 gap-6">
             {FOOTER_SERVICES.map((s) => (
-              <li key={s.label}>
+              <li key={s.label} className="relative break-inside-avoid mb-2.5 overflow-hidden">
                 <a
                   href={s.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-flex items-start gap-2.5 text-[15px] font-normal leading-[26px] text-footer-muted transition-colors duration-300 hover:translate-x-0.5 hover:text-footer-foreground"
+                  className="relative inline-flex pl-4 text-[15px] font-normal leading-[20px] text-footer-muted transition-all duration-300 hover:translate-x-0.5 hover:text-footer-foreground"
                 >
-                  <ChevronRight
-                    className="mt-1 h-4 w-4 shrink-0 fill-marker text-marker"
+                  <TriangleRight
+                    className="absolute left-0 top-0.5 h-4 w-4 fill-marker text-marker"
                     aria-hidden="true"
                   />
                   {s.label}

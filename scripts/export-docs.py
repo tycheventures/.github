@@ -92,6 +92,15 @@ def clean(html: str, prefix: str = "") -> str:
     return html
 
 
+def analytics_js() -> str:
+    """Reuse the GA4 snippet declared in src/routes/__root.tsx."""
+    root = (ROOT / "src" / "routes" / "__root.tsx").read_text()
+    for block in re.findall(r"children:\s*`([\s\S]*?)`", root):
+        if "dataLayer" in block:
+            return block.replace("\\/", "/").strip() + "\n"
+    return ""
+
+
 async def main():
     async with async_playwright() as pw:
         b = await pw.chromium.launch(headless=True)
@@ -141,6 +150,7 @@ async def main():
     css = css.replace('url("/img/', 'url("../img/').replace("url(/img/", "url(../img/")
     css = css.replace('url("/fonts/', 'url("../fonts/').replace("url(/fonts/", "url(../fonts/")
     (DOCS / "assets" / "style.css").write_text(css)
+    (DOCS / "assets" / "analytics.js").write_text(analytics_js())
     (DOCS / "assets" / "slides.js").write_text(
         "window.__SLIDES__ = " + json.dumps([clean(x) for x in slides]) + ";\n"
     )
@@ -164,7 +174,8 @@ async def main():
         html = clean(html, prefix)
         html = html.replace(
             "</head>",
-            f'<link rel="stylesheet" href="{prefix}assets/style.css">\n</head>',
+            f'<link rel="stylesheet" href="{prefix}assets/style.css">\n'
+            f'<script src="{prefix}assets/analytics.js"></script>\n</head>',
         )
         html = html.replace(
             "</body>",

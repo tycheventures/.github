@@ -193,7 +193,7 @@ function Index() {
                   key={p.title}
                   href={p.href}
                   target="_blank"
-                  rel="noopener noreferrer"
+                  rel="noopener noreferrer nofollow"
                   className="group relative block overflow-hidden rounded-sm shadow-card transition-shadow duration-300 hover:shadow-card-hover"
                 >
                   <img
@@ -207,8 +207,8 @@ function Index() {
                     <h3 className="text-xl font-medium leading-[30px] text-primary-foreground transition-transform duration-300 group-hover:-translate-y-1">
                       {p.title}
                     </h3>
+                    <span className="mt-2 block h-[3px] w-0 bg-marker transition-all duration-500 group-hover:w-full" />
                   </div>
-                  <span className="absolute inset-x-0 bottom-0 h-[3px] w-0 bg-marker transition-all duration-500 group-hover:w-full" />
                 </a>
               ))}
             </div>

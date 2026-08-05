@@ -359,10 +359,6 @@
   @supports (color: color-mix(in lab, red, red)) {
   .bg-heading\/0 { background-color: color-mix(in oklab, var(--heading) 0%, transparent); }
 }
-  .bg-heading\/75 { background-color: var(--heading); }
-  @supports (color: color-mix(in lab, red, red)) {
-  .bg-heading\/75 { background-color: color-mix(in oklab, var(--heading) 75%, transparent); }
-}
   .bg-marker { background-color: rgb(239, 64, 86); }
   .bg-muted { background-color: var(--muted); }
   .bg-muted\/50 { background-color: var(--muted); }
@@ -402,7 +398,6 @@
   .bg-cover { background-size: cover; }
   .bg-center { background-position: center center; }
   .bg-no-repeat { background-repeat: no-repeat; }
-  .fill-\[\#ef4056\] { fill: rgb(239, 64, 86); }
   .fill-current { fill: currentcolor; }
   .fill-marker { fill: rgb(239, 64, 86); }
   .fill-primary { fill: var(--primary); }
@@ -511,7 +506,6 @@
   .tracking-widest { --tw-tracking: var(--tracking-widest); letter-spacing: var(--tracking-widest); }
   .break-words { overflow-wrap: break-word; }
   .whitespace-nowrap { white-space: nowrap; }
-  .text-\[\#ef4056\] { color: rgb(239, 64, 86); }
   .text-accent-foreground { color: var(--accent-foreground); }
   .text-border { color: var(--border); }
   .text-card-foreground { color: var(--card-foreground); }

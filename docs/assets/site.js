@@ -108,4 +108,17 @@ document.addEventListener('DOMContentLoaded', function () {
       if (i >= text.length) clearInterval(t);
     }, 55);
   });
+
+  var top = document.getElementById('back-to-top');
+  if (top) {
+    var toggleTop = function () {
+      var on = window.scrollY > 400;
+      top.classList.toggle('opacity-100', on);
+      top.classList.toggle('opacity-0', !on);
+      top.classList.toggle('pointer-events-none', !on);
+    };
+    toggleTop();
+    window.addEventListener('scroll', toggleTop, { passive: true });
+    top.addEventListener('click', function () { window.scrollTo({ top: 0, behavior: 'smooth' }); });
+  }
 });

@@ -219,3 +219,14 @@
     color: #8f4190;
   }
 }
+
+@utility testimonial-lines {
+  background-image: repeating-linear-gradient(
+    to bottom,
+    transparent 0,
+    transparent 42px,
+    var(--border) 42px,
+    var(--border) 43px
+  );
+  background-size: 100% 43px;
+}

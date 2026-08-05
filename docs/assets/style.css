@@ -111,6 +111,7 @@
   .my-1 { margin-block: var(--spacing); }
   .-mt-4 { margin-top: calc(var(--spacing) * -4); }
   .mt-0\.5 { margin-top: calc(var(--spacing) * .5); }
+  .mt-1 { margin-top: var(--spacing); }
   .mt-1\.5 { margin-top: calc(var(--spacing) * 1.5); }
   .mt-2 { margin-top: calc(var(--spacing) * 2); }
   .mt-3 { margin-top: calc(var(--spacing) * 3); }
@@ -160,6 +161,7 @@
   .h-32 { height: calc(var(--spacing) * 32); }
   .h-\[1px\] { height: 1px; }
   .h-\[3px\] { height: 3px; }
+  .h-\[18px\] { height: 18px; }
   .h-\[240px\] { height: 240px; }
   .h-\[var\(--radix-navigation-menu-viewport-height\)\] { height: var(--radix-navigation-menu-viewport-height); }
   .h-\[var\(--radix-select-trigger-height\)\] { height: var(--radix-select-trigger-height); }
@@ -197,6 +199,7 @@
   .w-64 { width: calc(var(--spacing) * 64); }
   .w-72 { width: calc(var(--spacing) * 72); }
   .w-\[1px\] { width: 1px; }
+  .w-\[18px\] { width: 18px; }
   .w-\[100px\] { width: 100px; }
   .w-auto { width: auto; }
   .w-fit { width: fit-content; }
@@ -274,8 +277,10 @@
   .gap-6 { gap: calc(var(--spacing) * 6); }
   .gap-7 { gap: calc(var(--spacing) * 7); }
   .gap-10 { gap: calc(var(--spacing) * 10); }
+  .gap-12 { gap: calc(var(--spacing) * 12); }
   :where(.space-y-1\.5 > :not(:last-child)) { --tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 1.5) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 1.5) * calc(1 - var(--tw-space-y-reverse))); }
   :where(.space-y-2 > :not(:last-child)) { --tw-space-y-reverse: 0; margin-block-start: calc(calc(var(--spacing) * 2) * var(--tw-space-y-reverse)); margin-block-end: calc(calc(var(--spacing) * 2) * calc(1 - var(--tw-space-y-reverse))); }
+  .gap-x-4 { column-gap: calc(var(--spacing) * 4); }
   .gap-x-5 { column-gap: calc(var(--spacing) * 5); }
   .gap-x-10 { column-gap: calc(var(--spacing) * 10); }
   :where(.space-x-1 > :not(:last-child)) { --tw-space-x-reverse: 0; margin-inline-start: calc(var(--spacing) * var(--tw-space-x-reverse)); margin-inline-end: calc(var(--spacing) * calc(1 - var(--tw-space-x-reverse))); }
@@ -398,6 +403,7 @@
   .bg-cover { background-size: cover; }
   .bg-center { background-position: center center; }
   .bg-no-repeat { background-repeat: no-repeat; }
+  .fill-\[\#ef4056\] { fill: rgb(239, 64, 86); }
   .fill-current { fill: currentcolor; }
   .fill-primary { fill: var(--primary); }
   .object-contain { object-fit: contain; }
@@ -478,6 +484,7 @@
   .text-\[14px\] { font-size: 14px; }
   .text-\[15px\] { font-size: 15px; }
   .text-\[16px\] { font-size: 16px; }
+  .text-\[17px\] { font-size: 17px; }
   .text-\[18px\] { font-size: 18px; }
   .text-\[26px\] { font-size: 26px; }
   .text-\[38px\] { font-size: 38px; }
@@ -487,6 +494,7 @@
   .leading-\[1\.2\] { --tw-leading: 1.2; line-height: 1.2; }
   .leading-\[1\.06\] { --tw-leading: 1.06; line-height: 1.06; }
   .leading-\[25px\] { --tw-leading: 25px; line-height: 25px; }
+  .leading-\[26px\] { --tw-leading: 26px; line-height: 26px; }
   .leading-\[28px\] { --tw-leading: 28px; line-height: 28px; }
   .leading-\[30px\] { --tw-leading: 30px; line-height: 30px; }
   .leading-\[34px\] { --tw-leading: 34px; line-height: 34px; }
@@ -506,6 +514,7 @@
   .tracking-widest { --tw-tracking: var(--tracking-widest); letter-spacing: var(--tracking-widest); }
   .break-words { overflow-wrap: break-word; }
   .whitespace-nowrap { white-space: nowrap; }
+  .text-\[\#ef4056\] { color: rgb(239, 64, 86); }
   .text-accent-foreground { color: var(--accent-foreground); }
   .text-border { color: var(--border); }
   .text-card-foreground { color: var(--card-foreground); }
@@ -514,6 +523,10 @@
   .text-destructive-foreground { color: var(--destructive-foreground); }
   .text-footer-foreground { color: var(--footer-foreground); }
   .text-footer-muted { color: var(--footer-muted); }
+  .text-footer-muted\/50 { color: var(--footer-muted); }
+  @supports (color: color-mix(in lab, red, red)) {
+  .text-footer-muted\/50 { color: color-mix(in oklab, var(--footer-muted) 50%, transparent); }
+}
   .text-foreground { color: var(--foreground); }
   .text-heading { color: var(--heading); }
   .text-muted-foreground { color: var(--muted-foreground); }
@@ -678,6 +691,7 @@
 }
   .hover\:text-accent:hover { color: var(--accent); }
   .hover\:text-accent-foreground:hover { color: var(--accent-foreground); }
+  .hover\:text-footer-foreground:hover { color: var(--footer-foreground); }
   .hover\:text-foreground:hover { color: var(--foreground); }
   .hover\:text-muted-foreground:hover { color: var(--muted-foreground); }
   .hover\:text-primary:hover { color: var(--primary); }

@@ -1,32 +1,30 @@
-# Fix USP cards, About URL structure, and README content
+# Container width, counter overlay, project hover, and archive cross-check
 
-## 1. Restore the USP ("Why Choose Us") cards to the original design
+## 1. Container width → 1170px
 
-The current cards use oversized headings and cramped bodies. Match the archived/original design instead:
+Every section currently uses a 1152px container. Introduce one shared `.container-tyche` (max-width 1170px, 15px side padding) in the stylesheet and apply it to all sections on the homepage, About page, header and footer, so the whole site matches the original grid. The static export picks this up automatically on rebuild.
 
-- Card heading: 24px, bold, navy — but with normal (not enlarged) line height so two-line titles like "100 % Customer Satisfaction" sit tightly, as in the reference.
-- Body text: 16px grey with comfortable line height, not the current small 14px.
-- Icon: teal, sized as in the source, with the original spacing above the heading.
-- Card: white, subtle rounded corners, soft wide shadow, generous even padding, equal card heights across the row.
-- Keep 4 across on desktop, 2 on tablet, 1 on mobile.
+## 2. Counter section overlay
 
-## 2. Apply the same USP design on the About Us page
+The overlay above the background photo is currently navy-tinted, which reads blue. Replace it with a neutral black overlay (roughly 70% black) so the photo shows through as on the original.
 
-The About page currently renders these cards with a different, smaller style. Extract the card into a single shared component used by both the homepage and About page so the two never drift again, including the teal icons that the About page is missing.
+## 3. Project hover effect
 
-## 3. Move About Us to a folder URL
+Match the original tile hover: on hover the image zooms slightly, a dark wash fades in, the title lifts, and a short accent underline bar appears beneath the title (the coloured line in your screenshot). Currently there is no underline bar — it will be added, animating in from zero width, using the brand accent colour.
 
-Change the static export so About is published at `/about/` (`docs/about/index.html`) instead of `docs/about.html`, matching the rest of the site's folder structure. Keep a small redirect at the old `about.html` path so any existing link still works, and update internal links (header, footer, README) to `/about/`.
+## 4. Cross-check against the archive — fixes found
 
-## 4. README updates
-
-- Restore the full "About us" company description that was there before the shortening.
-- Give every item in the Services list a short one-line description after the link, so the section no longer looks like a bare list of names.
-- Leave the products, logo and layout as they are.
+- **Hero is missing the "Get A Quote" button.** The archived hero has Welcome to / Tyche Ventures / tagline / Get A Quote button. Add the button, linking to the live get-a-quote page.
+- **Highlight cards** verified: 4 cards, titles and copy match the archive text exactly.
+- **Services**: the archive lists 6 services in this order — Website Designing and Development, Learning Management System, E-Commerce Development, Job Portal Development, Search Engine Optimization, Digital Marketing Services. Confirm the site shows exactly these six, same order, same copy, and remove any extras that don't exist in the source.
+- **Section titles**: archive uses "Services", "Featured Projects", "Who Trusted Us", "Our Client Says". Our testimonial heading will be aligned to "Our Client Says" if it differs.
+- **Testimonials**: 16 entries in the archive; confirm all present after the recent addition and that quote text matches verbatim (including the fuller Georg Meyer quote).
+- **Client logos**: confirm the archive's logo set and order matches ours.
+- **Typography/spacing pass**: re-check section heading size, body 15px/25px, and card shadows against the archive CSS, since the container change shifts column widths.
 
 ## Technical notes
 
-- USP styling lives in `src/routes/index.tsx` and `src/routes/about.tsx`; both move to a new `src/components/site/HighlightCard.tsx`.
-- Font sizes/shadow to be taken from the Wayback CSS (24px title / 16px body / soft `0 0 24px` style shadow).
-- Export script updated to emit `about/index.html` plus the legacy stub, then `docs/` regenerated.
-- README changes are to `profile/README.md`.
+- New container utility in `src/styles.css`; replaces `max-w-6xl px-5` usages in `src/routes/index.tsx`, `src/routes/about.tsx`, `SiteHeader.tsx`, `SiteFooter.tsx`.
+- Counter overlay: swap `bg-heading/75` for a black overlay token.
+- Project hover underline built with a `group-hover` scaled span under the title.
+- After the code changes, regenerate `docs/` so the static GitHub Pages export stays in sync.

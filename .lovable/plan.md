@@ -32,13 +32,37 @@
 - Re-verify the USP cards start cleanly below the hero at all three widths.
 - Make USP cards 4 columns on desktop, 2 columns on tablet, and 1 column on mobile so none are clipped at the viewport edge.
 
-**Static export**
+## Pull the real CSS from the original site
+
+Yes — instead of re-guessing values, the original stylesheets (live site + Wayback snapshot) will be fetched and read, and the actual declarations copied across for the sections below: font sizes, line heights, letter spacing, box-shadow values, transition timings, and hover states. Anything the original defines becomes the source of truth; only genuinely broken rules get corrected.
+
+## USP / highlights cards
+
+- Heading 24px, body 14px (as in your original), with the original line-height and heading colour.
+- Replace the current tight `shadow-card` with the original's soft, wide, low-opacity shadow so the cards read as gently lifted rather than hard-edged.
+- Match original card padding, radius, border treatment, and centre alignment; equal-height cards.
+- Restore the original hover transition on the cards.
+
+## Missing hover effects
+
+Audit every interactive element against the original CSS and restore what is missing:
+
+- Project tiles: original image zoom / overlay reveal / caption and accent-bar behaviour with the original transition duration and easing.
+- Service items, client logo tiles, nav links and dropdowns, footer links, buttons (Get A Quote, View All, CTA band) — each gets its original hover colour, background, border, and transition.
+
+## Testimonials
+
+- Apply the original type scale (quote size, name/role size, line-height) instead of the current smaller text.
+- Match the original layout: avatar treatment, quote mark, spacing, card/shadow styling, and slider controls/dots.
+
+## Static export
 
 - Rebuild and regenerate `docs/` (index + about + redirect stubs) so the published GitHub Pages copy matches, and re-check the exported `docs/assets/style.css` background rules and `site.js` transparent→solid toggle.
 
 ## Verification
 
-Screenshots at 375, 768, 1024 and 1280px of both the React preview and the exported `docs/index.html`, compared against the supplied device screenshots. Check: wave reaches the top edge behind the header, no white gap, headline/tagline remain fully legible, illustration is not duplicated or clipped incoherently, hero height is controlled, USP cards fit their grid, and there is no horizontal scrollbar.
+Screenshots at 375, 768, 1024 and 1280px of both the React preview and the exported `docs/index.html`, compared against the supplied device screenshots and the original site. Check: wave reaches the top edge behind the header, no white gap, headline/tagline legible, hero height controlled, USP cards fit their grid with correct type and soft shadow, hover states fire on projects/services/clients/links, testimonials match the original scale, and no horizontal scrollbar.
+
 
 ## Technical notes
 

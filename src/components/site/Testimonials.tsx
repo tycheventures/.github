@@ -30,8 +30,8 @@ export function Testimonials() {
           className="h-[115px] w-[115px] shrink-0 rounded-full object-cover shadow-card"
         />
 
-        <div className="mt-10 w-full bg-muted px-6 py-10 sm:px-12">
-          <blockquote className="testimonial-lines relative text-[17px] font-normal leading-[43px] text-muted-foreground">
+        <div className="mt-10 w-full bg-[rgba(0,0,0,0.035)] px-6 pb-[10px] pt-[30px] sm:px-10">
+          <blockquote className="testimonial-lines relative text-[17px] font-normal leading-[31px] text-muted-foreground">
             <span
               aria-hidden="true"
               className="mr-1 align-[-0.35em] font-display text-[64px] leading-none text-border"
@@ -41,6 +41,7 @@ export function Testimonials() {
             {item.quote}
           </blockquote>
         </div>
+
 
         <div className="mt-6 flex items-center justify-center gap-2" aria-hidden="true">
           <span className="h-1.5 w-1.5 rounded-full bg-primary" />

@@ -23,7 +23,7 @@ export function HighlightCard({ icon, title, text, as: Heading = "h3" }: Props) 
     <article className="flex h-full flex-col items-center rounded-sm bg-card px-6 py-9 text-center shadow-card transition-shadow duration-300 hover:shadow-card-hover">
       <Icon className="h-10 w-10 text-primary" aria-hidden="true" strokeWidth={1.5} />
       <Heading className="mt-5 text-lg font-bold leading-6 text-heading">{title}</Heading>
-      <p className="mt-4 text-[15px] leading-[25px] text-muted-foreground">{text}</p>
+      <p className="mt-4 text-[14px] leading-[24px] text-muted-foreground">{text}</p>
     </article>
   );
 }

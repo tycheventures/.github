@@ -20,6 +20,13 @@
 - Use breakpoint-specific `background-size`/`background-position` (or an absolutely positioned decorative image) with `background-repeat: no-repeat`; do not duplicate, stretch, or distort the source artwork.
 - Keep the existing desktop type scale, reduce heading/tagline sizes and line lengths on tablet/mobile, and never allow the headline to extend underneath the illustration.
 
+**Hero tagline typing effect**
+
+- "Building Brands With Passion And Ulterior Motive" types in character by character on load, with a blinking cursor after the last character (matching the trailing caret in your screenshots).
+- Reserved line height so the layout does not shift while typing, and the full sentence is present for screen readers and in the exported HTML.
+- Recreated in vanilla JS for the `docs/` export so the static build animates identically.
+
+
 **Header**
 
 - Keep transparent-at-top / solid-on-scroll, but make the height consistent and expose it as a single value the hero padding reuses, so there is never a mismatch.

@@ -4,12 +4,15 @@ import { useEffect, useState } from "react";
 import { NAV, QUOTE_URL } from "@/lib/site-data";
 
 const linkCls =
-  "text-[14px] font-semibold uppercase tracking-wide text-title transition-colors duration-300 hover:text-primary";
+  "text-[14px] font-semibold uppercase tracking-wide text-title transition-colors duration-300 hover:text-primary focus-visible:outline-2 focus-visible:outline-offset-4 focus-visible:outline-primary";
 
 export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
-  const [openSub, setOpenSub] = useState<string | null>(null);
+  const [openSubs, setOpenSubs] = useState<string[]>([]);
+  const toggleSub = (label: string) =>
+    setOpenSubs((v) => (v.includes(label) ? v.filter((x) => x !== label) : [...v, label]));
+
 
   useEffect(() => {
     const onScroll = () => setScrolled(window.scrollY > 20);
@@ -27,6 +30,14 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
         solid ? "bg-background" : "bg-transparent"
       } ${solid && scrolled ? "shadow-card" : ""}`}
     >
+      <a
+        href="#main"
+        className="sr-only focus:not-sr-only focus:absolute focus:left-4 focus:top-3 focus:z-50 focus:rounded-sm focus:bg-accent focus:px-4 focus:py-2 focus:text-sm focus:font-semibold focus:text-accent-foreground"
+      >
+        Skip to content
+      </a>
+
+
 
       <div className="container-tyche flex items-center justify-between gap-6 px-5 py-3">
         <Link to="/" className="shrink-0" aria-label="Tyche Ventures home">
@@ -46,10 +57,10 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                 <div key={item.label} className="group relative">
                   <a
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(item.anchor ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                     className={`${linkCls} inline-flex items-center gap-1`}
                   >
+
                     {item.label}
                     <ChevronDown className="h-3.5 w-3.5" aria-hidden="true" />
                   </a>
@@ -120,18 +131,18 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                   <>
                     <button
                       type="button"
-                      onClick={() => setOpenSub((v) => (v === item.label ? null : item.label))}
-                      aria-expanded={openSub === item.label}
+                      onClick={() => toggleSub(item.label)}
+                      aria-expanded={openSubs.includes(item.label)}
                       className="flex w-full items-center justify-between py-3 text-sm font-semibold uppercase tracking-wide text-card-foreground"
                     >
                       {item.label}
                       <ChevronDown
                         className={`h-4 w-4 transition-transform ${
-                          openSub === item.label ? "rotate-180" : ""
+                          openSubs.includes(item.label) ? "rotate-180" : ""
                         }`}
                       />
                     </button>
-                    {openSub === item.label && (
+                    {openSubs.includes(item.label) && (
                       <ul className="pb-3 pl-3">
                         {item.children.map((c) => (
                           <li key={c.label}>
@@ -160,13 +171,14 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                 ) : (
                   <a
                     href={item.href}
-                    target="_blank"
-                    rel="noopener noreferrer"
+                    {...(item.anchor ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                    onClick={() => item.anchor && setOpen(false)}
                     className="block py-3 text-sm font-semibold uppercase tracking-wide text-card-foreground"
                   >
                     {item.label}
                   </a>
                 )}
+
               </li>
             ))}
             <li className="py-3">

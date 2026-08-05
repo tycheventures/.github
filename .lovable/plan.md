@@ -58,6 +58,7 @@ Crawled `https://wpgenius.in/` (sitemaps: page, services, portfolio, post). Avai
 
 Serve `docs/` locally, follow every stub URL and every header/footer link, and confirm no redirect loops, no self-referencing hops, and that on-site anchors scroll to the right section.
 
-## Needed from you
+## Confirm
 
-The WPGenius target URLs for the rows marked "link needed" above. A single services page and a single contact page is fine if per-service pages don't exist there.
+Tell me if you'd rather send SEO / digital marketing / graphics / e-commerce / job-portal URLs somewhere other than the WPGenius services index — otherwise I'll use the mapping above as-is.
+

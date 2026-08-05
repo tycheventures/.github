@@ -28,7 +28,7 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
       } ${solid && scrolled ? "shadow-card" : ""}`}
     >
 
-      <div className="mx-auto flex max-w-6xl items-center justify-between gap-6 px-5 py-3">
+      <div className="container-tyche flex items-center justify-between gap-6 px-5 py-3">
         <Link to="/" className="shrink-0" aria-label="Tyche Ventures home">
           <img
             src="/img/Tayche-C-3.png"
@@ -113,7 +113,7 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
           className="max-h-[75vh] overflow-y-auto border-t border-border bg-background lg:hidden"
           aria-label="Mobile"
         >
-          <ul className="mx-auto max-w-6xl px-5 py-2">
+          <ul className="container-tyche py-2">
             {NAV.map((item) => (
               <li key={item.label} className="border-b border-border last:border-0">
                 {item.children ? (

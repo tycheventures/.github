@@ -1,6 +1,7 @@
 import { createFileRoute } from "@tanstack/react-router";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
+import { HighlightCard } from "@/components/site/HighlightCard";
 import { HIGHLIGHTS } from "@/lib/site-data";
 
 const TITLE = "About Tyche Ventures — Kolhapur Web Design Agency";
@@ -36,7 +37,7 @@ function About() {
 
       <main className="pt-[68px] md:pt-[76px]">
         <section className="bg-surface py-14 md:py-20">
-          <div className="mx-auto max-w-6xl px-5 text-center">
+          <div className="container-tyche text-center">
             <h1 className="font-display text-4xl font-semibold tracking-[0.08em] text-heading md:text-5xl">
               About Tyche Ventures
             </h1>
@@ -77,19 +78,14 @@ function About() {
         </section>
 
         <section className="bg-surface py-16 md:py-20">
-          <div className="mx-auto max-w-6xl px-5">
+          <div className="container-tyche">
             <h2 className="section-title text-center text-3xl uppercase md:text-4xl">Why Choose Us?</h2>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
               {HIGHLIGHTS.map((h) => (
-                <article
-                  key={h.title}
-                  className="rounded-md border border-border bg-card p-7 text-center shadow-card"
-                >
-                  <h3 className="text-base font-semibold leading-snug">{h.title}</h3>
-                  <p className="mt-3 text-sm leading-relaxed text-muted-foreground">{h.text}</p>
-                </article>
+                <HighlightCard key={h.title} icon={h.icon} title={h.title} text={h.text} />
               ))}
             </div>
+
           </div>
         </section>
       </main>

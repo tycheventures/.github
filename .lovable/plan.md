@@ -38,7 +38,7 @@ Pages that live on now go to the matching page on WPGenius; the rest stay inside
 | `/careers/` | link needed |
 | `/contact/` | link needed |
 | `/get-a-quote/` | link needed |
-| `/products/` | stays on this site — homepage products section |
+| `/products/` | stays on this site — homepage products section (drop the Plugins Gallery and Themes Expert product links) |
 | `/privacy-policy/` | stays on this site — homepage (until rebuilt) |
 | `/about.html` | `/about/` (already correct) |
 

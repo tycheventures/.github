@@ -1,13 +1,14 @@
 import { createFileRoute } from "@tanstack/react-router";
-import { IndianRupee, Monitor, Settings, Star, ThumbsUp, Users } from "lucide-react";
-import type { LucideIcon } from "lucide-react";
+import { Monitor, Settings, Users } from "lucide-react";
 import { SiteHeader } from "@/components/site/SiteHeader";
 import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { CountUp } from "@/components/site/CountUp";
+import { HighlightCard } from "@/components/site/HighlightCard";
 import { Testimonials } from "@/components/site/Testimonials";
 import { TypedTagline } from "@/components/site/TypedTagline";
 import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, SERVICES, SITE, SOCIALS } from "@/lib/site-data";
+
 
 const TITLE = "Tyche Ventures — Website Design & Development Agency";
 const DESC =

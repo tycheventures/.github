@@ -52,7 +52,7 @@ export function SiteFooter() {
         </div>
 
         <div className="lg:col-span-2">
-          <h4 className="text-base font-semibold text-footer-foreground">Services</h4>
+          <h3 className="text-base font-semibold text-footer-foreground">Services</h3>
           <ul className="mt-5 grid gap-2.5 sm:grid-cols-2">
             {FOOTER_SERVICES.map((s) => (
               <li key={s.label}>
@@ -71,7 +71,7 @@ export function SiteFooter() {
         </div>
 
         <div>
-          <h4 className="text-base font-semibold text-footer-foreground">Connect With Us</h4>
+          <h3 className="text-base font-semibold text-footer-foreground">Connect With Us</h3>
           <ul className="mt-5 flex flex-wrap gap-2.5">
             {SOCIALS.map((s) => {
               const Icon = ICONS[s.label] ?? Globe;

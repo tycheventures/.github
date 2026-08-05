@@ -1,0 +1,129 @@
+{
+  "version": 1,
+  "sdk_version": "0.26.1",
+  "path": "/mcp",
+  "auth": {
+    "type": "none"
+  },
+  "mcp": {
+    "server": {
+      "name": "archive-revival",
+      "version": "0.1.0",
+      "title": "Archive Revival"
+    },
+    "tools": [
+      {
+        "name": "get_company_overview",
+        "title": "Get company overview",
+        "description": "Get an overview of Tyche Ventures: tagline, summary, products, headline statistics, key page links and social profiles.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "overview": {}
+          },
+          "required": [
+            "overview"
+          ]
+        }
+      },
+      {
+        "name": "list_services",
+        "title": "List services",
+        "description": "List the services Tyche Ventures offers, with a description and page URL for each. Optionally filter by a keyword.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "query": {
+              "description": "Optional keyword to filter services by title or description, e.g. 'seo'.",
+              "type": "string"
+            }
+          }
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "result": {}
+          },
+          "required": [
+            "result"
+          ]
+        }
+      },
+      {
+        "name": "list_portfolio",
+        "title": "List portfolio",
+        "description": "List Tyche Ventures portfolio projects and client brands, each with its case-study or website URL.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {}
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "result": {}
+          },
+          "required": [
+            "result"
+          ]
+        }
+      },
+      {
+        "name": "list_testimonials",
+        "title": "List testimonials",
+        "description": "List published client testimonials for Tyche Ventures.",
+        "annotations": {
+          "readOnlyHint": true,
+          "idempotentHint": true,
+          "openWorldHint": false
+        },
+        "inputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "limit": {
+              "description": "Maximum number of testimonials to return.",
+              "type": "integer",
+              "minimum": -9007199254740991,
+              "maximum": 9007199254740991
+            }
+          }
+        },
+        "outputSchema": {
+          "$schema": "http://json-schema.org/draft-07/schema#",
+          "type": "object",
+          "properties": {
+            "testimonials": {}
+          },
+          "required": [
+            "testimonials"
+          ]
+        }
+      }
+    ]
+  }
+}

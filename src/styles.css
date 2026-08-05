@@ -224,9 +224,14 @@
   background-image: repeating-linear-gradient(
     to bottom,
     transparent 0,
-    transparent 42px,
-    var(--border) 42px,
-    var(--border) 43px
+    transparent 26px,
+    var(--border) 26px,
+    var(--border) 27px,
+    transparent 27px,
+    transparent 31px
   );
-  background-size: 100% 43px;
+  background-size: 100% 31px;
+  background-position: 0 0;
+  background-repeat: repeat;
 }
+

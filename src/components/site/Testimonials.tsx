@@ -21,26 +21,26 @@ export function Testimonials() {
       onMouseEnter={() => setPaused(true)}
       onMouseLeave={() => setPaused(false)}
     >
-      <figure className="flex flex-col gap-6 sm:flex-row sm:items-start">
+      <figure id="testimonial-figure" className="flex flex-col gap-6 sm:flex-row sm:items-start">
         <img
           src={item.img}
           alt={item.name}
           width={85}
           height={85}
           loading="lazy"
-          className="h-20 w-20 shrink-0 object-cover"
+          className="h-24 w-24 shrink-0 rounded-full object-cover shadow-card"
         />
         <div className="relative pl-7">
           <span
             aria-hidden="true"
-            className="absolute left-0 top-[-6px] font-display text-4xl leading-none text-border"
+            className="absolute left-0 top-[-10px] font-display text-6xl leading-none text-border"
           >
             &ldquo;
           </span>
-          <blockquote className="text-sm leading-relaxed text-muted-foreground">
+          <blockquote className="text-[16px] font-medium leading-[28px] text-muted-foreground">
             {item.quote}
           </blockquote>
-          <figcaption className="mt-4 text-sm font-semibold text-primary">
+          <figcaption className="mt-5 text-[16px] font-semibold text-primary">
             {"– "}
             {item.href ? (
               <a
@@ -65,6 +65,7 @@ export function Testimonials() {
         <button
           type="button"
           onClick={() => setI((v) => (v - 1 + total) % total)}
+          id="testimonial-prev"
           aria-label="Previous testimonial"
           className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
         >
@@ -76,6 +77,7 @@ export function Testimonials() {
               key={t.name}
               type="button"
               onClick={() => setI(idx)}
+              data-dot={idx}
               aria-label={`Show testimonial from ${t.name}`}
               aria-current={idx === i}
               className={`h-2 w-2 rounded-full transition-colors ${
@@ -87,6 +89,7 @@ export function Testimonials() {
         <button
           type="button"
           onClick={() => setI((v) => (v + 1) % total)}
+          id="testimonial-next"
           aria-label="Next testimonial"
           className="inline-flex h-8 w-8 items-center justify-center rounded-full border border-border text-muted-foreground transition-colors hover:border-primary hover:text-primary"
         >

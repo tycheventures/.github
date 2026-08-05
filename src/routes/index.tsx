@@ -6,6 +6,7 @@ import { SiteFooter } from "@/components/site/SiteFooter";
 import { SectionTitle } from "@/components/site/SectionTitle";
 import { CountUp } from "@/components/site/CountUp";
 import { Testimonials } from "@/components/site/Testimonials";
+import { TypedTagline } from "@/components/site/TypedTagline";
 import { CLIENTS, COUNTERS, HIGHLIGHTS, PROJECTS, SERVICES, SITE } from "@/lib/site-data";
 
 const TITLE = "Tyche Ventures — Website Design & Development Agency";
@@ -40,43 +41,62 @@ function Index() {
 
       <main>
         {/* Hero */}
-        <section
-          className="relative overflow-hidden bg-background hero-banner bg-cover bg-[position:65%_center] bg-no-repeat lg:bg-[length:100%_auto] lg:bg-bottom"
-        >
-          <div className="relative z-10 mx-auto grid min-h-[520px] max-w-6xl items-center gap-10 px-5 pb-24 pt-32 md:min-h-[600px] md:pt-40 lg:min-h-[700px] lg:grid-cols-2 lg:pt-36">
+        <section className="relative overflow-hidden bg-gradient-to-b from-wave via-wave-soft to-background lg:bg-none">
+          {/* desktop / large: full-bleed artwork behind the transparent header */}
+          <img
+            src="/img/hero-banner.png"
+            alt=""
+            aria-hidden="true"
+            width={1920}
+            height={650}
+            className="pointer-events-none absolute inset-0 hidden h-full w-full object-cover object-bottom lg:block"
+          />
+
+          <div className="relative z-10 mx-auto flex max-w-6xl flex-col px-5 pb-10 pt-28 md:pt-32 lg:grid lg:min-h-[560px] lg:grid-cols-2 lg:items-center lg:gap-10 lg:pb-24 lg:pt-40">
             <div>
-              <p className="font-display text-2xl font-normal text-heading sm:text-3xl">Welcome to</p>
-              <h1 className="mt-2 font-display text-4xl font-semibold tracking-[0.04em] text-heading sm:text-5xl">
+              <p className="font-display text-xl font-medium text-title sm:text-2xl">Welcome to</p>
+              <h1 className="mt-2 font-display text-[38px] font-bold leading-[1.06] tracking-[3px] text-title sm:text-5xl lg:text-[60px] lg:leading-[64px] lg:tracking-[4px]">
                 TYCHE
                 <br />
                 VENTURES
               </h1>
-              <p className="mt-4 max-w-md text-base text-muted-foreground">
-                Building Brands With Passion And Ulterior Motive
+              <p className="mt-4 max-w-md text-[15px] leading-[25px] text-muted-foreground sm:text-base">
+                <TypedTagline text="Building Brands With Passion And Ulterior Motive" />
               </p>
             </div>
             <div aria-hidden="true" className="hidden lg:block" />
           </div>
+
+          {/* tablet / mobile: artwork sits below the copy so nothing overlaps the headline */}
+          <img
+            src="/img/hero-banner.png"
+            alt=""
+            aria-hidden="true"
+            width={1920}
+            height={650}
+            className="relative z-0 block h-[240px] w-full object-cover object-[72%_bottom] sm:h-[320px] md:h-[380px] md:object-[78%_bottom] lg:hidden"
+          />
         </section>
 
         {/* Highlights */}
         <section className="mx-auto max-w-6xl px-5 py-16 md:py-20">
-          <div className="grid gap-5 sm:grid-cols-2 lg:grid-cols-4">
+          <div className="grid gap-6 sm:grid-cols-2 lg:grid-cols-4">
             {HIGHLIGHTS.map((h) => {
               const Icon = HIGHLIGHT_ICONS[h.icon] ?? Star;
               return (
                 <article
                   key={h.title}
-                  className="flex flex-col items-center rounded-sm border border-border bg-card p-6 text-center shadow-card transition-shadow hover:shadow-card-hover"
+                  className="flex flex-col items-center rounded-sm bg-card px-6 py-9 text-center shadow-card transition-shadow duration-300 hover:shadow-card-hover"
                 >
-                  <Icon className="h-7 w-7 text-primary" aria-hidden="true" />
-                  <h2 className="mt-4 text-sm font-semibold leading-snug">{h.title}</h2>
-                  <p className="mt-3 text-[13px] leading-relaxed text-muted-foreground">{h.text}</p>
+                  <Icon className="h-9 w-9 text-primary" aria-hidden="true" strokeWidth={1.5} />
+                  <h2 className="mt-5 text-2xl font-bold leading-8 text-heading">{h.title}</h2>
+                  <p className="mt-4 text-sm leading-6 text-muted-foreground">{h.text}</p>
                 </article>
               );
             })}
           </div>
         </section>
+
 
 
         {/* Services */}
@@ -85,22 +105,27 @@ function Index() {
             <SectionTitle icon={Settings}>Services</SectionTitle>
             <div className="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
               {SERVICES.map((s) => (
-                <article key={s.title} className="flex gap-4">
+                <article key={s.title} className="group flex gap-5">
                   <img
                     src={s.icon}
                     alt=""
                     width={48}
                     height={48}
                     loading="lazy"
-                    className="h-10 w-10 shrink-0 object-contain"
+                    className="h-12 w-12 shrink-0 object-contain transition-transform duration-300 group-hover:scale-110"
                   />
                   <div>
-                    <h3 className="text-base font-medium leading-snug">
-                      <a href={s.href} className="transition-colors hover:text-primary">
+                    <h3 className="text-[18px] font-medium leading-[1.2] text-title">
+                      <a
+                        href={s.href}
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="transition-colors duration-300 hover:text-primary"
+                      >
                         {s.title}
                       </a>
                     </h3>
-                    <p className="mt-2 text-[13px] leading-relaxed text-muted-foreground">{s.text}</p>
+                    <p className="mt-3 text-[15px] leading-[25px] text-muted-foreground">{s.text}</p>
                   </div>
                 </article>
               ))}
@@ -110,13 +135,15 @@ function Index() {
 
         {/* Purple CTA band */}
         <section className="bg-accent">
-          <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-8 text-center md:flex-row md:justify-between md:text-left">
-            <p className="text-base text-accent-foreground">
+          <div className="mx-auto flex max-w-6xl flex-col items-center gap-5 px-5 py-10 text-center md:flex-row md:justify-between md:text-left">
+            <p className="text-2xl font-medium leading-[34px] text-accent-foreground">
               Talk to our experts today and get professional design, and development services.
             </p>
             <a
               href={`${SITE}/get-a-quote/`}
-              className="shrink-0 rounded-sm border border-accent-foreground/70 px-6 py-2.5 text-sm font-medium text-accent-foreground transition-colors hover:bg-accent-foreground hover:text-accent"
+              target="_blank"
+              rel="noopener noreferrer"
+              className="shrink-0 rounded-sm border border-accent-foreground/70 px-7 py-3 text-[15px] font-medium text-accent-foreground transition-colors duration-300 hover:bg-accent-foreground hover:text-accent"
             >
               Get A Quote
             </a>
@@ -132,16 +159,21 @@ function Index() {
                 <a
                   key={p.title}
                   href={p.href}
-                  className="group relative block overflow-hidden rounded-sm shadow-card"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="group relative block overflow-hidden rounded-sm shadow-card transition-shadow duration-300 hover:shadow-card-hover"
                 >
                   <img
                     src={p.img}
                     alt={`${p.title} website project by Tyche Ventures`}
                     loading="lazy"
-                    className="aspect-[4/3] w-full object-cover object-top transition-transform duration-500 group-hover:scale-105"
+                    className="aspect-[4/3] w-full object-cover object-top transition-transform duration-500 ease-in-out group-hover:scale-110"
                   />
-                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent px-4 pb-3 pt-10">
-                    <h3 className="text-sm font-medium text-white">{p.title}</h3>
+                  <span className="pointer-events-none absolute inset-0 bg-heading/0 transition-colors duration-500 group-hover:bg-heading/45" />
+                  <div className="pointer-events-none absolute inset-x-0 bottom-0 bg-gradient-to-t from-black/80 via-black/45 to-transparent px-5 pb-4 pt-12">
+                    <h3 className="text-xl font-medium leading-[30px] text-primary-foreground transition-transform duration-300 group-hover:-translate-y-1">
+                      {p.title}
+                    </h3>
                   </div>
                   <span className="absolute inset-x-0 bottom-0 h-[3px] w-0 bg-primary transition-all duration-500 group-hover:w-full" />
                 </a>
@@ -150,7 +182,9 @@ function Index() {
             <div className="mt-12 text-center">
               <a
                 href={`${SITE}/work/`}
-                className="inline-block rounded-sm border border-primary px-7 py-3 text-sm font-semibold uppercase tracking-wide text-primary transition-colors hover:bg-primary hover:text-primary-foreground"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-block rounded-sm border border-primary px-8 py-3 text-[15px] font-semibold uppercase tracking-wide text-primary transition-colors duration-300 hover:bg-primary hover:text-primary-foreground"
               >
                 View All
               </a>
@@ -159,18 +193,16 @@ function Index() {
         </section>
 
         {/* Counters */}
-        <section className="relative bg-heading py-20">
-          <div
-            className="absolute inset-0 bg-gradient-to-r from-brand-alt/35 via-transparent to-brand/30"
-            aria-hidden="true"
-          />
-
+        <section className="counter-bg relative bg-heading bg-cover bg-center bg-no-repeat py-20">
+          <div className="absolute inset-0 bg-heading/75" aria-hidden="true" />
 
           <div className="relative mx-auto grid max-w-6xl gap-10 px-5 sm:grid-cols-2 lg:grid-cols-4">
             {COUNTERS.map((c) => (
               <div key={c.label}>
                 <CountUp value={c.value} suffix={c.suffix} />
-                <p className="mt-2 text-center text-sm text-white/85">{c.label}</p>
+                <p className="mt-3 text-center text-[15px] font-medium text-primary-foreground/90">
+                  {c.label}
+                </p>
               </div>
             ))}
           </div>
@@ -180,7 +212,7 @@ function Index() {
         <section className="py-16 md:py-20">
           <div className="mx-auto max-w-6xl px-5">
             <SectionTitle icon={Users}>Who Trusted Us</SectionTitle>
-            <ul className="mx-auto mt-12 grid max-w-4xl grid-cols-2 gap-4 sm:grid-cols-3 lg:grid-cols-5">
+            <ul className="mx-auto mt-12 grid max-w-5xl grid-cols-2 gap-5 sm:grid-cols-3 lg:grid-cols-4">
               {CLIENTS.map((c) => (
                 <li key={c.name}>
                   <a
@@ -188,13 +220,13 @@ function Index() {
                     target="_blank"
                     rel="noopener noreferrer"
                     title={c.name}
-                    className="flex h-24 items-center justify-center rounded-sm border border-border bg-surface p-4 transition-colors hover:border-primary"
+                    className="flex h-32 items-center justify-center rounded-sm border border-border bg-surface px-5 py-4 transition-all duration-[400ms] ease-in-out hover:border-primary hover:shadow-card"
                   >
                     <img
                       src={c.img}
                       alt={`${c.name} logo`}
                       loading="lazy"
-                      className="max-h-12 w-auto max-w-[120px] object-contain"
+                      className="max-h-20 w-auto max-w-[180px] object-contain"
                     />
                   </a>
                 </li>
@@ -202,6 +234,7 @@ function Index() {
             </ul>
           </div>
         </section>
+
 
         {/* Testimonials */}
         <section className="bg-surface py-16 md:py-20">

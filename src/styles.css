@@ -50,9 +50,11 @@
   --color-footer-muted: var(--footer-muted);
   --font-sans: "Montserrat", ui-sans-serif, system-ui, sans-serif;
   --font-display: "Montserrat", ui-sans-serif, system-ui, sans-serif;
-  --shadow-card: 0 2px 14px rgb(27 27 79 / 0.07);
-  --shadow-card-hover: 0 14px 40px rgb(27 27 79 / 0.14);
+  --color-title: var(--title);
+  --shadow-card: 0 0 25px 0 rgb(200 196 219 / 0.3);
+  --shadow-card-hover: 0 0 30px 0 rgb(200 196 219 / 0.55);
 }
+
 
 :root {
   --radius: 0.25rem;
@@ -76,6 +78,7 @@
   --input: oklch(0.937 0 90);
   --ring: oklch(0.685 0.103 213.5);
   --heading: oklch(0.258 0.093 277.7);
+  --title: oklch(0.383 0 90);
   --brand: oklch(0.685 0.103 213.5);
   --brand-foreground: oklch(1 0 0);
   --brand-alt: oklch(0.505 0.146 326.5);
@@ -107,6 +110,7 @@
   --input: oklch(1 0 0 / 15%);
   --ring: oklch(0.685 0.103 213.5);
   --heading: oklch(0.97 0.01 260);
+  --title: oklch(0.95 0.01 260);
   --brand: oklch(0.685 0.103 213.5);
   --brand-foreground: oklch(0.16 0.04 277.7);
   --brand-alt: oklch(0.62 0.16 326.5);
@@ -128,6 +132,9 @@
     background-color: var(--color-background);
     color: var(--color-foreground);
     font-family: var(--font-sans);
+    font-size: 15px;
+    font-weight: 500;
+    line-height: 25px;
     -webkit-font-smoothing: antialiased;
   }
 
@@ -143,9 +150,9 @@
 }
 
 @utility section-title {
-  color: var(--color-heading);
-  font-weight: 600;
-  letter-spacing: 0.02em;
+  color: var(--color-title);
+  font-weight: 700;
+  letter-spacing: 0.5px;
 }
 
 @utility caret-blink {
@@ -165,5 +172,9 @@
 
 .hero-banner {
   background-image: url("/img/hero-banner.png");
+}
+
+.counter-bg {
+  background-image: url("/img/counter-bg.jpg");
 }
 

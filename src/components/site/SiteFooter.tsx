@@ -58,7 +58,9 @@ export function SiteFooter() {
               <li key={s.label}>
                 <a
                   href={s.href}
-                  className="inline-flex items-start gap-1.5 text-sm transition-colors hover:text-primary"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="inline-flex items-start gap-1.5 text-sm transition-colors duration-300 hover:translate-x-0.5 hover:text-primary"
                 >
                   <ChevronRight className="mt-0.5 h-3.5 w-3.5 shrink-0 text-primary" />
                   {s.label}
@@ -106,7 +108,12 @@ export function SiteFooter() {
                     {l.label}
                   </Link>
                 ) : (
-                  <a href={l.href} className="text-xs transition-colors hover:text-primary">
+                  <a
+                    href={l.href}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="text-xs transition-colors duration-300 hover:text-primary"
+                  >
                     {l.label}
                   </a>
                 )}

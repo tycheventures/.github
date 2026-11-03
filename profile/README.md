@@ -2,7 +2,7 @@
 
 <a href="https://tycheventures.com" target="_blank" rel="noopener"><img src="./logo.png" alt="Tyche Ventures" width="260"></a>
 
-### Building Brands With Passion And Ulterior Motive
+### Building Brands With Passion And Purpose
 
 </div>
 
@@ -12,9 +12,13 @@
 
 Today, in the digital era, it is essential to build your professional online presence to sustain in the market. A well designed and properly working website can convert your visitors into potential customers.
 
-Tyche Ventures is the Kolhapur based leading website design and development agency delivering high quality, reliable and result-oriented website solutions. Innovation, customer satisfaction, quality and commitment are the four basic building blocks of our team. Our talented programmers, creative designers and skilled marketers work together to fulfil our customer's goals and improve market branding.
+Tyche Ventures is a Kolhapur based website design and development firm, established in 2018, delivering high quality, reliable and result-oriented website solutions. Innovation, customer satisfaction, quality and commitment are the four basic building blocks of how we work, and we bring in the right specialists for each project to fulfil our customers' goals and strengthen their brand.
 
-Our team possesses advanced knowledge and experience in website designing, e-commerce development, content management systems, job portal and learning management system development, graphic and logo designing, and many more digital solutions. We also provide domain, hosting and annual maintenance services to keep your website secure and up to date.
+We bring advanced knowledge and experience in website designing, e-commerce development, content management systems, job portal and learning management system development, graphic and logo designing, and many more digital solutions. We also provide domain, hosting and annual maintenance services to keep your website secure and up to date.
+
+## Our story
+
+Tyche Ventures is a proprietorship founded in 2018 by [Makarand Mane](https://github.com/MakarandMane). WPGenius began as part of Tyche Ventures and became a separate firm, WPGenius Solutions LLP, in 2021.
 
 ## Services offered
 
@@ -27,7 +31,22 @@ Our team possesses advanced knowledge and experience in website designing, e-com
 - <a href="https://tycheventures.com/services/" target="_blank" rel="noopener">Graphics Design Services</a> — Logos, brand identity and creatives that keep your visual language consistent.
 - <a href="https://tycheventures.com/services/" target="_blank" rel="noopener">Annual Maintenance Contract</a> — Ongoing updates, backups, security and support for your live website.
 
-## Our products
+## Our brands
 
-- <a href="http://wpgenius.in/" target="_blank" rel="noopener"><b>Team WPGenius</b></a> — A dedicated WordPress studio offering custom theme and plugin development, speed and security optimisation, migrations, bug fixing and ongoing maintenance and support for WordPress and WooCommerce websites.
-- <a href="https://shop.fenixhost.in/" target="_blank" rel="noopener"><b>FenixHost</b></a> — Domain registration and managed hosting brand providing Linux and Windows shared hosting, cloud and dedicated servers, business email and SSL, backed by round-the-clock technical support.
+- <a href="https://wpgenius.in/" target="_blank" rel="noopener"><b>WPGenius</b></a> — Now a separate firm, WPGenius Solutions LLP (since 2021). A dedicated WordPress studio offering custom theme and plugin development, speed and security optimisation, migrations, bug fixing and ongoing maintenance and support for WordPress and WooCommerce websites.
+- <a href="https://fenixhost.in/" target="_blank" rel="noopener"><b>FenixHost</b></a> — Our domain registration and managed hosting brand providing Linux and Windows shared hosting, cloud and dedicated servers, business email and SSL, backed by round-the-clock technical support. Website: [fenixhost.in](https://fenixhost.in/) · Store: [shop.fenixhost.in](https://shop.fenixhost.in/)
+
+## Featured projects
+
+- [Chanakya Mandal Pariwar](https://chanakyamandal.org/)
+- [Mahendra Jewellers](https://mahendrajewellers.com/)
+- [Top Somali Jobs](https://topsomalijobs.so/)
+- [Hureo](https://hureo.com/)
+- [Florian Kappe Fine Arts](https://floriankappe.com/)
+- [Intellipaat](https://intellipaat.com/)
+
+[View all work →](https://wpgenius.in/work/)
+
+## Connect with us
+
+[Website](https://tycheventures.com/) · [LinkedIn](https://www.linkedin.com/company/tycheventures) · [Facebook](https://www.facebook.com/tycheventures) · [X](https://twitter.com/tycheventures) · [YouTube](https://www.youtube.com/channel/UCTLzu8wfTooan6qBjE7Mffg) · [WordPress.org](https://profiles.wordpress.org/tycheventures/) · [GitHub](https://github.com/tycheventures)

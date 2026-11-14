@@ -106,7 +106,7 @@ function Index() {
                 <span className="sr-only"> — Website Design &amp; Development Agency</span>
               </h1>
               <p className="mt-4 max-w-xl text-lg font-medium leading-[28px] text-muted-foreground sm:text-xl lg:text-2xl lg:leading-[34px]">
-                <TypedTagline text="Building Brands With Passion And Ulterior Motive" />
+                <TypedTagline text="Building Brands With Passion And Purpose" />
               </p>
               <a
                 href={QUOTE_URL}

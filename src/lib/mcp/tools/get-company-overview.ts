@@ -4,7 +4,7 @@ import { COUNTERS, FOOTER_LINKS, SITE, SOCIALS } from "../../site-data";
 
 const OVERVIEW = {
   company: "Tyche Ventures",
-  tagline: "Building brands with passion and ulterior motive",
+  tagline: "Building brands with passion and purpose",
   website: SITE,
   summary:
     "Tyche Ventures is a web design, development and digital marketing company delivering websites, learning management systems, e-commerce stores, job portals, SEO and digital marketing services.",

@@ -79,7 +79,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
       { charSet: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
       { title: "Tyche Ventures" },
-      { name: "description", content: "Building brands with passion and ulterior motive." },
+      { name: "description", content: "Building brands with passion and purpose." },
       { name: "author", content: "Tyche Ventures" },
       { property: "og:site_name", content: "Tyche Ventures" },
       { property: "og:type", content: "website" },
@@ -141,7 +141,7 @@ export const Route = createRootRouteWithContext<{ queryClient: QueryClient }>()(
             name: "Tyche Ventures",
             url: SITE,
             logo: `${SITE}/img/taychi-230x70.png`,
-            description: "Building brands with passion and ulterior motive.",
+            description: "Building brands with passion and purpose.",
             sameAs: SOCIALS.map((s) => s.href),
           },
           {

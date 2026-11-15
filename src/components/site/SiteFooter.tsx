@@ -50,7 +50,7 @@ export function SiteFooter() {
           </Link>
           <p className="mt-6 text-[14px] font-normal leading-[22px] text-footer-muted">
             Kolhapur based website design and development agency delivering high quality, reliable and
-            result-oriented digital solutions since 2015.
+            result-oriented digital solutions since 2018.
           </p>
         </div>
 

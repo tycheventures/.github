@@ -29,10 +29,11 @@ type NavItem = {
 export const NAV: NavItem[] = [
   { label: "About", href: "/about", internal: true },
 
-  { label: "Work", href: WPG_WORK },
+  { label: "Work", href: "#work", anchor: true },
   {
     label: "Services",
-    href: WPG_SERVICES,
+    href: "#services",
+    anchor: true,
     children: [
       { label: "Learning management system", href: WPG_LMS },
       { label: "E-commerce development", href: WPG_SERVICES },

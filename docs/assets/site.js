@@ -33,9 +33,19 @@ document.addEventListener('DOMContentLoaded', function () {
       btn.setAttribute('aria-label', nav.hidden ? 'Open menu' : 'Close menu');
       if (header.__sync) header.__sync();
     });
+    nav.addEventListener('click', function (e) {
+      var link = e.target && e.target.closest ? e.target.closest('a') : null;
+      if (!link) return;
+      nav.hidden = true;
+      btn.innerHTML = MENU_SVG;
+      btn.setAttribute('aria-expanded', 'false');
+      btn.setAttribute('aria-label', 'Open menu');
+      if (header && header.__sync) header.__sync();
+    });
+
     nav.querySelectorAll('button[aria-expanded]').forEach(function (sub) {
-      var list = sub.nextElementSibling;
-      if (!list) return;
+      var list = sub.nextElementSibling || (sub.parentElement && sub.parentElement.nextElementSibling);
+      if (!list || list.tagName !== 'UL') return;
       list.hidden = true;
       sub.setAttribute('aria-expanded', 'false');
       var chev = sub.querySelector('svg');

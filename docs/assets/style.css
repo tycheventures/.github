@@ -36,7 +36,7 @@
   @supports (not ((-webkit-appearance: -apple-pay-button))) or (contain-intrinsic-size: 1px) {
   ::placeholder { color: currentcolor; }
   @supports (color: color-mix(in lab, red, red)) {
-  ::placeholder { color: color-mix(in oklab, currentcolor, transparent); }
+  ::placeholder { color: color-mix(currentcolor, transparent); }
 }
 }
   textarea { resize: vertical; }
@@ -60,6 +60,7 @@
   ::-webkit-outer-spin-button { height: auto; }
   [hidden]:where(:not([hidden="until-found"])) { display: none !important; }
   * { border-color: var(--color-border); }
+  html { scroll-behavior: smooth; }
   body { background-color: var(--color-background); color: var(--color-foreground); font-family: var(--font-sans); -webkit-font-smoothing: antialiased; font-size: 15px; font-weight: 500; line-height: 25px; }
   h1, h2, h3, h4, h5, h6 { color: var(--color-heading); font-weight: 600; }
 }
@@ -265,6 +266,7 @@
   .cursor-default { cursor: default; }
   .cursor-pointer { cursor: pointer; }
   .touch-none { touch-action: none; }
+  .scroll-mt-20 { scroll-margin-top: calc(var(--spacing) * 20); }
   .list-none { list-style-type: none; }
   .break-inside-avoid { break-inside: avoid; }
   .grid-cols-2 { grid-template-columns: repeat(2, minmax(0px, 1fr)); }
@@ -869,6 +871,7 @@
   .md\:h-\[380px\] { height: 380px; }
   .md\:w-\[var\(--radix-navigation-menu-viewport-width\)\] { width: var(--radix-navigation-menu-viewport-width); }
   .md\:w-auto { width: auto; }
+  .md\:scroll-mt-24 { scroll-margin-top: calc(var(--spacing) * 24); }
   .md\:grid-cols-2 { grid-template-columns: repeat(2, minmax(0px, 1fr)); }
   .md\:flex-row { flex-direction: row; }
   .md\:justify-between { justify-content: space-between; }

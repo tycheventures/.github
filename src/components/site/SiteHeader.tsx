@@ -1,4 +1,4 @@
-import { Link } from "@tanstack/react-router";
+import { Link, useLocation } from "@tanstack/react-router";
 import { ChevronDown, Menu, X } from "lucide-react";
 import { useEffect, useState } from "react";
 import { NAV, QUOTE_URL } from "@/lib/site-data";
@@ -22,6 +22,12 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
   }, []);
 
   const solid = !transparent || scrolled || open;
+
+  // On-page anchors (Work, Services) must resolve from any page, so prefix them
+  // with the relative path back to the homepage.
+  const { pathname } = useLocation();
+  const depth = pathname.split("/").filter(Boolean).length;
+  const anchorHref = (href: string) => (depth === 0 ? href : "../".repeat(depth) + href);
 
   return (
     <header
@@ -56,7 +62,7 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
               return (
                 <div key={item.label} className="group relative">
                   <a
-                    href={item.href}
+                    href={item.anchor ? anchorHref(item.href) : item.href}
                     {...(item.anchor ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                     className={`${linkCls} inline-flex items-center gap-1`}
                   >
@@ -93,7 +99,12 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                 {item.label}
               </Link>
             ) : (
-              <a key={item.label} href={item.href} target="_blank" rel="noopener noreferrer" className={linkCls}>
+              <a
+                key={item.label}
+                href={item.anchor ? anchorHref(item.href) : item.href}
+                {...(item.anchor ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                className={linkCls}
+              >
                 {item.label}
               </a>
             );
@@ -132,19 +143,29 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
               <li key={item.label} className="border-b border-border last:border-0">
                 {item.children ? (
                   <>
-                    <button
-                      type="button"
-                      onClick={() => toggleSub(item.label)}
-                      aria-expanded={openSubs.includes(item.label)}
-                      className="flex w-full items-center justify-between py-3 text-sm font-semibold uppercase tracking-wide text-card-foreground"
-                    >
-                      {item.label}
-                      <ChevronDown
-                        className={`h-4 w-4 transition-transform ${
-                          openSubs.includes(item.label) ? "rotate-180" : ""
-                        }`}
-                      />
-                    </button>
+                    <div className="flex items-center justify-between gap-2">
+                      <a
+                        href={item.anchor ? anchorHref(item.href) : item.href}
+                        {...(item.anchor ? {} : { target: "_blank", rel: "noopener noreferrer" })}
+                        onClick={() => item.anchor && setOpen(false)}
+                        className="block flex-1 py-3 text-sm font-semibold uppercase tracking-wide text-card-foreground"
+                      >
+                        {item.label}
+                      </a>
+                      <button
+                        type="button"
+                        onClick={() => toggleSub(item.label)}
+                        aria-expanded={openSubs.includes(item.label)}
+                        aria-label={`Show ${item.label} options`}
+                        className="p-2 text-card-foreground"
+                      >
+                        <ChevronDown
+                          className={`h-4 w-4 transition-transform ${
+                            openSubs.includes(item.label) ? "rotate-180" : ""
+                          }`}
+                        />
+                      </button>
+                    </div>
                     {openSubs.includes(item.label) && (
                       <ul className="pb-3 pl-3">
                         {item.children.map((c) => (
@@ -173,7 +194,7 @@ export function SiteHeader({ transparent = false }: { transparent?: boolean }) {
                   </Link>
                 ) : (
                   <a
-                    href={item.href}
+                    href={item.anchor ? anchorHref(item.href) : item.href}
                     {...(item.anchor ? {} : { target: "_blank", rel: "noopener noreferrer" })}
                     onClick={() => item.anchor && setOpen(false)}
                     className="block py-3 text-sm font-semibold uppercase tracking-wide text-card-foreground"

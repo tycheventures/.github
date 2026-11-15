@@ -151,7 +151,7 @@ function Index() {
 
 
         {/* Services */}
-        <section id="services" className="pb-16 md:pb-20">
+        <section id="services" className="scroll-mt-20 pb-16 md:scroll-mt-24 md:pb-20">
           <div className="container-tyche">
             <SectionTitle icon={Settings}>Services</SectionTitle>
             <div className="mt-12 grid gap-x-10 gap-y-10 md:grid-cols-2 lg:grid-cols-3">
@@ -205,7 +205,7 @@ function Index() {
         </section>
 
         {/* Featured projects */}
-        <section id="work" className="py-16 md:py-20">
+        <section id="work" className="scroll-mt-20 py-16 md:scroll-mt-24 md:py-20">
           <div className="container-tyche">
             <SectionTitle icon={Monitor}>Featured Projects</SectionTitle>
             <div className="mt-12 grid gap-6 sm:grid-cols-2 lg:grid-cols-3">

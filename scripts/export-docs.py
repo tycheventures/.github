@@ -171,6 +171,12 @@ async def main():
         depth = out.count("/")
         prefix = "../" * depth
         nav = clean(mobile_nav, prefix).replace("<nav ", '<nav id="mobile-nav" hidden ', 1)
+        # the mobile nav is captured on the homepage, so re-point its in-page anchors
+        nav = re.sub(
+            r'href="#(work|services)"',
+            lambda m: f'href="{prefix}#{m.group(1)}"',
+            nav,
+        )
         html = clean(html, prefix)
         html = html.replace(
             "</head>",
@@ -230,6 +236,7 @@ async def main():
     )
     page404 = re.sub(r"<main[\s\S]*?</main>", body404, home, count=1)
     page404 = page404.replace('href="index.html"', 'href="/"')
+    page404 = page404.replace('href="#work"', 'href="/#work"').replace('href="#services"', 'href="/#services"')
     page404 = page404.replace('href="assets/', 'href="/assets/').replace('src="assets/', 'src="/assets/')
     page404 = page404.replace('src="img/', 'src="/img/').replace('href="about/"', 'href="/about/"')
     page404 = page404.replace('src="/img/hero-banner', 'data-x="/img/hero-banner')

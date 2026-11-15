@@ -1,4 +1,5 @@
 import { Link } from "@tanstack/react-router";
+import type { ComponentType } from "react";
 import {
   Facebook,
   Github,
@@ -10,16 +11,17 @@ import {
   Globe,
   ChevronRight,
 } from "lucide-react";
+import { WordPressIcon } from "@/components/site/WordPressIcon";
 import { FOOTER_LINKS, FOOTER_SERVICES, SOCIALS } from "@/lib/site-data";
 
-const ICONS: Record<string, typeof Facebook> = {
+const ICONS: Record<string, ComponentType<{ className?: string }>> = {
   WhatsApp: MessageCircle,
   Skype: MessageSquare,
   LinkedIn: Linkedin,
   Facebook: Facebook,
   Twitter: Twitter,
   GitHub: Github,
-  WordPress: Globe,
+  WordPress: WordPressIcon,
   YouTube: Youtube,
 };
 
